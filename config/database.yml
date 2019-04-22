@@ -50,6 +50,6 @@ test:
 production:
   <<: *default
   database: mercari_weekend_46nagoya_production
-  username: mercari_weekend_46nagoya
+  username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
