@@ -44,6 +44,11 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'rubocop-rspec'
+  gem "rails-controller-testing"
 end
 
 group :development do
@@ -69,3 +74,21 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :production do
   gem 'unicorn', '5.4.1'
 end
+
+gem 'haml-rails'
+gem 'erb2haml'
+gem "font-awesome-rails"
+gem 'jquery-slick-rails'
+gem 'devise'
+gem 'kaminari'
+gem 'pry-rails'
+
+gem 'rails-i18n'
+
+gem 'gretel'
+gem 'fog-aws'
+gem 'carrierwave'
+gem 'mini_magick'
+gem "recaptcha", require: "recaptcha/rails"
+gem 'payjp'
+gem 'payjp_mock'
