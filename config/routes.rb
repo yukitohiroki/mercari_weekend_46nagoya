@@ -13,6 +13,13 @@ Rails.application.routes.draw do
     resources :payment_informations, only: [:index, :new, :create, :destroy]
   end
 
+  # resources :users, only: %i(index show) do
+  #   collection do
+  #     get :logout
+  #   end
+  # end
+
+
   resources :orders, only: [:show, :create]
 
   match 'secondcategory', to: 'items#secondcategory', via: [:get, :post]
@@ -20,6 +27,7 @@ Rails.application.routes.draw do
 
   resources :categorys
   get "logout" => 'users#logout'
+  get "users-form" => 'users#index'
   get "order-confirm" => 'items#order-confirm'
   get "users/user_info/:id" => 'users#user_info', as: 'users_user_info'
   get "users/user_exhibitation_products/:id" => 'users#user_exhibitation_products', as: 'user_exhibitation_products'
