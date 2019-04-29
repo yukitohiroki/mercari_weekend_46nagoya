@@ -1,0 +1,12 @@
+= render partial: "items/header"
+/ .breads
+/   - breadcrumb :logout
+/   = breadcrumbs separator: "#{content_tag(:i, '', class: 'fa fa-angle-right')}"
+.default-container
+  %main.large-container.clearfix
+    .large-content
+      .logout-box
+        .logout-box__btn
+          = link_to "ログアウト", destroy_user_session_path, method: :delete,class:"logout-btn"
+    = render partial: "mypage-left-side"
+= render partial: "items/footer"
