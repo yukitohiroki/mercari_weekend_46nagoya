@@ -3,9 +3,7 @@
     %figure
       = image_tag "header-footer_images/member_photo.png", size:"60x60", class: "user-icon"
     %h2.bold
-
       = current_user.nickname
-
     .mypage-number
       %div
         評価
@@ -15,8 +13,6 @@
         出品数
         %span.bold
           / = current_user.items.length
-
-
 %section.mypage-tab-container#mypage-notification-todo
   %ul.mypage-tabs
     %li.mypage-tab#tab-notification.active
@@ -34,11 +30,6 @@
     %ul#mypage-tab-todos.mypage-item-list.tab-pane.not-active
       %li.mypage-item-not-found.not-found-bold
         現在、やることリストはありません
-
-
-
-
-
 %section.mypage-tab-container#mypage-transaction-now-old
   .mypage-tab-head
     購入した商品

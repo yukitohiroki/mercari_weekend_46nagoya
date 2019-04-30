@@ -12,9 +12,9 @@ class ApplicationController < ActionController::Base
     Rails.env.production?
   end
 
-  # def basic_auth
-  #   authenticate_or_request_with_http_basic do |username, password|
-  #     username == "mercari" && password == "2019"
-  #   end
-  # end
+  def basic_auth
+    authenticate_or_request_with_http_basic do |username, password|
+      username == "mercari" && password == "2019"
+    end
+  end
 end
