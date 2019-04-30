@@ -100,9 +100,7 @@
               = f.select :birth_day,[*(1..31)],prompt:"選択してください"
             .birth
               日
-      .recapcha
-        %br/
-        私はロボットではありません
+      .g-recaptcha{"data-sitekey": "6LfeCKEUAAAAAHogdoz14qZbylP951edYGrtHNZM"}
       .submit-btn
         = f.submit "登録完了",class:"next-btn"
 = render 'layouts/sellfooter'
