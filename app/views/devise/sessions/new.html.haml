@@ -20,6 +20,7 @@
         = f.email_field :email, autocomplete: "email",placeholder:"メールアドレス"
       .login-box__form__field
         = f.password_field :password, autocomplete: "current-password",placeholder:"パスワード"
+      .g-recaptcha{"data-sitekey": "6LfeCKEUAAAAAHogdoz14qZbylP951edYGrtHNZM"}
       .submit-btn
         = f.submit "ログイン",class:"next-btn"
 = render 'layouts/sellfooter'
