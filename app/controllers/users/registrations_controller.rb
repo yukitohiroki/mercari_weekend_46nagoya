@@ -1,4 +1,5 @@
 class Users::RegistrationsController < Devise::RegistrationsController
+
   # before_action :check_recaptcha, only: %i(create)
 
   def new
