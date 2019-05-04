@@ -9,10 +9,10 @@
           = link_to new_user_registration_path, class: "btn-default btn-mail" do
             = fa_icon "envelope", class: "icon-mail", type: :far
             メールアドレスで登録
-          / = link_to user_facebook_omniauth_authorize_path, id: "facebook-login", class: "btn-default btn-sns btn-sns-facebook" do
-          /   = fa_icon "facebook", class: "icon-facebook", type: :fab
-          /   Facebookで登録
-          / = link_to user_google_oauth2_omniauth_authorize_path, id: "google-login", class: "btn-default btn-sns btn-sns-google" do
-          /   = fa_icon "google-plus-g", class: "icon-google-plus", type: :fab
-          /   Googleで登録
+          = link_to user_facebook_omniauth_authorize_path, id: "facebook-login", class: "btn-default btn-sns btn-sns-facebook" do
+            = fa_icon "facebook", class: "icon-facebook", type: :fab
+            Facebookで登録
+          = link_to user_google_oauth2_omniauth_authorize_path, id: "google-login", class: "btn-default btn-sns btn-sns-google" do
+            = fa_icon "google-plus-g", class: "icon-google-plus", type: :fab
+            Googleで登録
   = render 'devise/shared/footer'

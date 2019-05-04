@@ -2,77 +2,115 @@
   padding: 0 0 220px;
   main {
     display: block;
-    .l-single-container {
-      width: 700px;
+    .login-panel {
+      max-width: none;
+      width: 456px;
       margin: 0 auto;
       background: #fff;
-      .l-single-head {
-        line-height: 1.5;
+      .login-no-account {
+        padding: 40px 64px;
         text-align: center;
-        padding: 32px 16px;
-        font-size: 22px;
-        font-weight: bold;
+        p {
+          font-size: 14px;
+        }
+        a {
+          display: block;
+          margin: 8px 0 0;
+          border: 1px solid #0099c8;
+          background: #0099c8;
+          color: #fff;
+          line-height: 40px;
+        }
       }
-      .l-single-inner {
-        padding: 64px;
-        border-top: 1px solid #f5f5f5;
-        .l-single-content {
-          max-width: 320px;
-          margin: 0 auto;
-          .btn-mail {
-            position: relative;
-            background: #eee;
-            color: #000;
-            .icon-mail {
-              position: absolute;
-              top: 50%;
-              left: 16px;
-              transform: translate(0, -50%);
-              color: #ccc;
-              font-size: 20.5px;
+      .login-form-inner {
+        padding: 5px 64px;
+        border-top: 1px solid #eee;
+        &:last-child {
+          padding: 24px 64px 32px;
+          border: 0;
+        }
+        .g-recaptcha{
+         margin: 20px 0px;
+         }
+        .btn-sns {
+          position: relative;
+          &-facebook {
+            background: #385185;
+            color: #fff;
+            &:first-child {
+              margin: 0;
             }
           }
+          &-google {
+            margin: 16px 0 0;
+            background: #dc4e41;
+            color: #fff;
+          }
+          i {
+            position: absolute;
+            top: 50%;
+            left: 16px;
+            transform: translate(0, -50%);
+          }
+          .icon-facebook {
+            color: #fff;
+            background: #385185;
+            font-size: 20.5px;
+          }
+          .icon-google-plus {
+            color: #fff;
+            background: #dc4e41;
+            font-size: 18.5px;
+          }
+        }
+        .btn-default {
+          display: block;
+          width: 100%;
+          line-height: 48px;
+          font-size: 14px;
+          border: 1px solid transparent;
+          transition: all ease-out.3s;
+          cursor: pointer;
+          text-align: center;
+        }
+      .form-group {
+        margin: 24px 0 0;
+        &:first-child {
+          margin: 0;
+        }
+        .input-user-info {
+          margin: 0;
+          width: 90%;
+          height: 48px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          line-height: 1.5;
+          font-size: 16px;
+        }
+      }
+        .login-submit {
+          margin: 24px 0 0;
           .btn-default {
             display: block;
             width: 100%;
             line-height: 48px;
             font-size: 14px;
-            border: 1px solid transparent;
-            transition: all ease-out.3s;
+            transition: all ease-out .3s;
             cursor: pointer;
             text-align: center;
           }
-          .btn-sns {
-            position: relative;
-            i {
-              position: absolute;
-              top: 50%;
-              left: 16px;
-              transform: translate(0, -50%);
-            }
-            &-facebook {
-              margin: 16px 0 0;
-              background: #385185;
-              color: #fff;
-            }
-            .icon-facebook {
-              color: #fff;
-              background: #385185;
-              font-size: 20.5px;
-            }
-            &-google {
-              margin: 16px 0 0;
-              background: #dc4e41;
-              color: #fff;
-            }
-            .icon-google-plus {
-              color: #fff;
-              background: #dc4e41;
-              font-size: 18.5px;
-            }
-          }
+        }
+        .btn-red {
+          background: #ea352d;
+          border: 1px solid #ea352d;
+          color: #fff;
         }
       }
+    }
+    .forget-password {
+      display: block;
+      margin: 40px 0 0;
     }
   }
 }
