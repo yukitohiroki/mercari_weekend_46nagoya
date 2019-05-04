@@ -1,27 +1,25 @@
-= render 'layouts/sellheader'
-.login-box
-  .login-box__no-account
-    アカウントをお持ちでない方はこちら
-    %br/
-    .signup--box
-      =link_to "新規会員登録", new_user_registration_path,class: "signup-btn"
-  .login-box__from-sns
-    .login-box__from-sns__facebook
-      %i.fab.fa-facebook-square.facebook-icon
-      %span.facebook-text
-      =link_to "Facebookでログイン", user_facebook_omniauth_authorize_path
-      
-    .login-box__from-sns__google
-      %i.fab.fa-google-plus.google-icon
-      %span.google-text
-      =link_to "Googleでログイン" ,user_google_oauth2_omniauth_authorize_path
-  .login-box__form
-    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-      .login-box__form__field
-        = f.email_field :email, autocomplete: "email",placeholder:"メールアドレス"
-      .login-box__form__field
-        = f.password_field :password, autocomplete: "current-password",placeholder:"パスワード"
-      .g-recaptcha{"data-sitekey": "6LfeCKEUAAAAAHogdoz14qZbylP951edYGrtHNZM"}
-      .submit-btn
-        = f.submit "ログイン",class:"next-btn"
-= render 'layouts/sellfooter'
+.single-container
+  = render 'layouts/sellheader'
+  %main.single-main
+    .login-panel
+      .login-no-account
+        %p アカウントをお持ちでない方はこちら
+        = link_to "新規会員登録", new_user_registration_path
+      .login-form-inner
+        = link_to user_facebook_omniauth_authorize_path, id: "facebook-login", class: "btn-default btn-sns btn-sns-facebook" do
+          = fa_icon "facebook", class: "icon-facebook", type: :fab
+          Facebookでログイン
+        = link_to user_google_oauth2_omniauth_authorize_path, id: "google-login", class: "btn-default btn-sns btn-sns-google" do
+          = fa_icon "google-plus-g", class: "icon-google-plus", type: :fab
+          Googleでログイン
+      = form_for(resource, as: resource_name, url: session_path(resource_name),method: :post) do |f|
+        .login-form-inner
+          .form-group
+            = f.email_field :email, placeholder: 'メールアドレス', class: "input-user-info"
+          .form-group
+            = f.password_field :password, placeholder: 'パスワード', class: "input-user-info"
+          .g-recaptcha{"data-sitekey": "6LfeCKEUAAAAAHogdoz14qZbylP951edYGrtHNZM"}
+          .form-group
+          = f.submit "ログイン", class: "login-submit btn-default btn-red"
+          = link_to "パスワードをお忘れの方へ", root_path, class: "forget-password"
+  = render 'layouts/sellfooter'
