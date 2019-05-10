@@ -138,7 +138,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|||
-|prpfit|integer||
+|profit|integer||
 |user_id|reference|foreign_key: true|
 |item_id|reference|foreign_key: true|
 |expiration_date|daytime||
@@ -201,7 +201,6 @@ Things you may want to cover:
 |price|integer|null:false|
 |description|text|null:false|
 |category1_id|reference|foreign_key:true|
-
 |brand_id|reference|foreign_key:true|
 |size_id|reference|foreign_key:true|
 |condition_id|reference|foreign_key:true|
