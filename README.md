@@ -200,7 +200,9 @@ Things you may want to cover:
 |name|string|null:false|
 |price|integer|null:false|
 |description|text|null:false|
-|category1_id|reference|foreign_key:true|
+|first_category_id|reference|foreign_key:true|
+|second_category_id|reference|foreign_key:true|
+|third_category_id|reference|foreign_key:true|
 |brand_id|reference|foreign_key:true|
 |size_id|reference|foreign_key:true|
 |condition_id|reference|foreign_key:true|
@@ -222,6 +224,8 @@ Things you may want to cover:
 - belongs_to :prefecture
 - belongs_to :user
 - belongs_to :first_category
+- belongs_to :second_category
+- belongs_to :third_category
 - belongs_to :brand
 - belongs_to :condition
 - belongs_to :delivery_charge
