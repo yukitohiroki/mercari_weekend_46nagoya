@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_11_071124) do
+ActiveRecord::Schema.define(version: 2019_05_11_074910) do
 
   create_table "conditions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "condition"
@@ -25,20 +25,20 @@ ActiveRecord::Schema.define(version: 2019_05_11_071124) do
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user", null: false
+    t.integer "user_id", null: false
     t.string "name", null: false
     t.integer "price", null: false
     t.text "description", null: false
-    t.integer "first_category"
-    t.integer "second_category"
-    t.integer "third_category"
-    t.integer "brand"
-    t.integer "size"
-    t.integer "condition"
-    t.integer "delivery_charge"
-    t.integer "prefecure"
-    t.integer "delivery_date"
-    t.integer "order_status"
+    t.integer "first_category_id"
+    t.integer "second_category_id"
+    t.integer "third_category_id"
+    t.integer "brand_id"
+    t.integer "size_id"
+    t.integer "condition_id"
+    t.integer "delivery_charge_id"
+    t.integer "prefecure_id"
+    t.integer "delivery_date_id"
+    t.integer "order_status_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -56,6 +56,14 @@ ActiveRecord::Schema.define(version: 2019_05_11_071124) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "second_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "first_category_id"
+    t.integer "size_category_id"
+    t.string "second_category", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "provider"
     t.string "uid"
@@ -63,6 +71,13 @@ ActiveRecord::Schema.define(version: 2019_05_11_071124) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_sns_credentials_on_user_id"
+  end
+
+  create_table "third_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "second_category_id"
+    t.string "third_category", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
