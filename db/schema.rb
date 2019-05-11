@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_11_080953) do
+ActiveRecord::Schema.define(version: 2019_05_11_081825) do
 
   create_table "conditions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "condition"
@@ -60,6 +60,12 @@ ActiveRecord::Schema.define(version: 2019_05_11_080953) do
     t.integer "first_category_id"
     t.integer "size_category_id"
     t.string "second_category", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "size_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "size_category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
