@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_11_114223) do
+ActiveRecord::Schema.define(version: 2019_05_11_115007) do
 
   create_table "brand_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "brand_id"
@@ -102,6 +102,27 @@ ActiveRecord::Schema.define(version: 2019_05_11_114223) do
 
   create_table "order_statuses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "order_status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "item_id", null: false
+    t.integer "seller_id", null: false
+    t.string "first_name_delivery", null: false
+    t.string "first_name_kana_delivery", null: false
+    t.string "last_name_delivery", null: false
+    t.string "last_name_kana_delivery", null: false
+    t.integer "prefecture_id"
+    t.string "city_delivery", null: false
+    t.string "adress_delivery", null: false
+    t.string "building_delivery"
+    t.integer "zip_code_delivery", null: false
+    t.integer "telephone_delivery"
+    t.integer "payment_method"
+    t.boolean "user_point", default: true, null: false
+    t.integer "point"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
