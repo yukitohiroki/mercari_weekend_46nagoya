@@ -30,7 +30,7 @@
     %ul
       -@ladies_items.each do |item|
         %li.item-box
-          =link_to "仮置きで" do
+          =link_to "items/#{item.id}" do
             = image_tag "item_images/#{item.item_images[0].image}"
             .item-box-text
               .text-box
@@ -55,7 +55,7 @@
     %ul
       -@mens_items.each do |item|
         %li.item-box
-          =link_to "仮置きで" do
+          =link_to "items/#{item.id}" do
             = image_tag "item_images/#{item.item_images[0].image}"
             .item-box-text
               .text-box
