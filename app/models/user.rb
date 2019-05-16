@@ -8,21 +8,21 @@ class User < ApplicationRecord
   validates :zip_code,length: { maximum:7 }
   validates :zip_code,length: { minimum:7 }
   validates :telephone ,numericality:true
-  has_many   :items
-  has_many   :orders
-  has_many   :profits
-  has_many   :points
-  has_many   :communications
-  has_many   :likes
-  has_many   :flags
-  has_many   :rate_counts
-  has_many   :message_items,    through: :communications, source: :item
-  has_many   :like_items,       through: :likes,          source: :item
-  has_many   :flag_items,       through: :flags,          source: :item
-  has_many   :rating_items,     through: :rate_counts,     source: :item
+  has_many   :items, dependent: :destroy
+  has_many   :orders, dependent: :destroy
+  has_many   :profits, dependent: :destroy
+  has_many   :points, dependent: :destroy
+  has_many   :communications, dependent: :destroy
+  has_many   :likes, dependent: :destroy
+  has_many   :flags, dependent: :destroy
+  has_many   :rate_counts, dependent: :destroy
+  has_many   :message_items,    through: :communications, source: :item, dependent: :destroy
+  has_many   :like_items,       through: :likes,          source: :item, dependent: :destroy
+  has_many   :flag_items,       through: :flags,          source: :item, dependent: :destroy
+  has_many   :rating_items,     through: :rate_counts,     source: :item, dependent: :destroy
   has_many   :sns_credentials, dependent: :destroy
 
-  has_many   :payment_information
+  has_many   :payment_information, dependent: :destroy
   belongs_to :prefecture, optional: true
 
   # def self.find_oauth(auth)
