@@ -34,6 +34,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
 
       t.datetime   :remember_created_at
       t.datetime   :reset_password_sent_at
+      t.integer  :prefecture_id
 
       # t.references :prefecture,                   foreign_key: true
       # t.references :payment_information,       foreign_key: true

@@ -6,18 +6,20 @@ class Item < ApplicationRecord
   has_many :message_users,through: :messages,source: :user
   has_many :like_users,through: :likes,source: :user
   has_many :flag_users,through: :flags,source: :user
-  belongs_to :order
-  belongs_to :profit
-  belongs_to :prefecture
-  belongs_to :user
-  belongs_to :first_category
-  belongs_to :second_category
-  belongs_to :third_category
-  belongs_to :brand
-  belongs_to :condition
-  belongs_to :delivery_charge
-  belongs_to :delivery_date
-  belongs_to :delivery_way
-  belongs_to :order_status
-  belongs_to :size
+
+  belongs_to :order, optional: true
+  belongs_to :profit, optional: true
+  belongs_to :prefecture, optional: true
+  belongs_to :user, optional: true
+  belongs_to :first_category, optional: true
+  belongs_to :second_category, optional: true
+  belongs_to :third_category, optional: true
+  belongs_to :brand, optional: true
+  belongs_to :condition, optional: true
+  belongs_to :delivery_charge, optional: true
+  belongs_to :delivery_date, optional: true
+  belongs_to :delivery_way, optional: true
+  belongs_to :order_status, optional: true
+  belongs_to :size, optional: true
+
 end
