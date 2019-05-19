@@ -1,10 +1,10 @@
 FactoryBot.define do
   factory :user do
-    nickname                { "aaaaa" }
-    first_name              { "yamada" }
-    first_name_kana         { "yamada" }
-    last_name               { "taro" }
-    last_name_kana          { "taro" }
+    nickname                { Faker::Name.name }
+    first_name              { Faker::Name.first_name }
+    first_name_kana         { Faker::Name.name }
+    last_name               { Faker::Name.last_name }
+    last_name_kana          { Faker::Name.name }
     city                    { "city" }
     address                 { "address" }
     building                { "building" }
