@@ -5,7 +5,6 @@ FactoryBot.define do
     first_name_kana         { "yamada" }
     last_name               { "taro" }
     last_name_kana          { "taro" }
-    # prefecture              { "aichi" }
     city                    { "city" }
     address                 { "address" }
     building                { "building" }
@@ -25,7 +24,5 @@ FactoryBot.define do
     password                { "111111" }
     password_confirmation   { "111111" }
     association :prefecture,           factory: :prefecture
-    # association :payment_information,  factory: :payment_information
   end
-
 end
