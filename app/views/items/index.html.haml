@@ -26,576 +26,229 @@
   %section.item-boxs
     %h3
       = link_to do
-        レディース新着アイテム
-      / - @items.each do |item|
+        レディース 新着アイテム
     %ul
-      %li.item-box
-        =link_to "/items/1" do
-          = image_tag "http://img05.shop-pro.jp/PA01016/706/product/16801459_o1.jpg"
-          .item-box-text
-            .text-box
-              %h4
-                test-image
-            .price
-              ¥10,000
-            .price-tax
-              (税込)
-            .nice
-              = fa_icon "heart"
-              %span
-                1
+      -@ladies_items.each do |item|
+        %li.item-box
+          =link_to "仮置きで" do
+            = image_tag "item_images/#{item.item_images[0].image}"
+            .item-box-text
+              .text-box
+                %h4
+                  #{item.name}
+              .price
+                = number_to_currency(item.price, unit: "￥", strip_insignificant_zeros: true)
+              .price-tax
+                (税込)
+              .nice
+                = fa_icon "heart"
+                %span
+                #{item.likes.count}
     .view-all
       =link_to do
         すべての商品を見る
+
   %section.item-boxs
     %h3
       = link_to do
-        レディース新着アイテム
+        メンズ 新着アイテム
     %ul
-      %li.item-box
-        =link_to "仮置きで" do
-          = image_tag "仮置き用.jpg"
-          .item-box-text
-            .text-box
-              %h4
-                test-image
-            .price
-              ¥10,000
-            .price-tax
-              (税込)
-            .nice
-              = fa_icon "heart"
-              %span
-                1
-      %li.item-box
-        =link_to "仮置きで" do
-          = image_tag "仮置き用.jpg"
-          .item-box-text
-            .text-box
-              %h4
-                test-image
-            .price
-              ¥10,000
-            .price-tax
-              (税込)
-            .nice
-              = fa_icon "heart"
-              %span
-                1
-      %li.item-box
-        =link_to "仮置きで" do
-          = image_tag "仮置き用.jpg"
-          .item-box-text
-            .text-box
-              %h4
-                test-image
-            .price
-              ¥10,000
-            .price-tax
-              (税込)
-            .nice
-              = fa_icon "heart"
-              %span
-                1
-      %li.item-box
-        =link_to "仮置きで" do
-          = image_tag "仮置き用.jpg"
-          .item-box-text
-            .text-box
-              %h4
-                test-image
-            .price
-              ¥10,000
-            .price-tax
-              (税込)
-            .nice
-              = fa_icon "heart"
-              %span
-                1
+      -@mens_items.each do |item|
+        %li.item-box
+          =link_to "仮置きで" do
+            = image_tag "item_images/#{item.item_images[0].image}"
+            .item-box-text
+              .text-box
+                %h4
+                  #{item.name}
+              .price
+                = number_to_currency(item.price, unit: "￥", strip_insignificant_zeros: true)
+              .price-tax
+                (税込)
+              .nice
+                = fa_icon "heart"
+                %span
+                #{item.likes.count}
     .view-all
       =link_to do
         すべての商品を見る
+
   %section.item-boxs
     %h3
       = link_to do
-        レディース新着アイテム
+        ベビー・キッズ 新着アイテム
     %ul
-      %li.item-box
-        =link_to "仮置きで" do
-          = image_tag "仮置き用.jpg"
-          .item-box-text
-            .text-box
-              %h4
-                test-image
-            .price
-              ¥10,000
-            .price-tax
-              (税込)
-            .nice
-              = fa_icon "heart"
-              %span
-                1
-      %li.item-box
-        =link_to "仮置きで" do
-          = image_tag "仮置き用.jpg"
-          .item-box-text
-            .text-box
-              %h4
-                test-image
-            .price
-              ¥10,000
-            .price-tax
-              (税込)
-            .nice
-              = fa_icon "heart"
-              %span
-                1
-      %li.item-box
-        =link_to "仮置きで" do
-          = image_tag "仮置き用.jpg"
-          .item-box-text
-            .text-box
-              %h4
-                test-image
-            .price
-              ¥10,000
-            .price-tax
-              (税込)
-            .nice
-              = fa_icon "heart"
-              %span
-                1
-      %li.item-box
-        =link_to "仮置きで" do
-          = image_tag "仮置き用.jpg"
-          .item-box-text
-            .text-box
-              %h4
-                test-image
-            .price
-              ¥10,000
-            .price-tax
-              (税込)
-            .nice
-              = fa_icon "heart"
-              %span
-                1
+      -@baby_items.each do |item|
+        %li.item-box
+          =link_to "仮置きで" do
+            = image_tag "item_images/#{item.item_images[0].image}"
+            .item-box-text
+              .text-box
+                %h4
+                  #{item.name}
+              .price
+                = number_to_currency(item.price, unit: "￥", strip_insignificant_zeros: true)
+              .price-tax
+                (税込)
+              .nice
+                = fa_icon "heart"
+                %span
+                #{item.likes.count}
     .view-all
       =link_to do
         すべての商品を見る
+
   %section.item-boxs
     %h3
       = link_to do
-        レディース新着アイテム
+        インテリア・住まい・小物 新着アイテム
     %ul
-      %li.item-box
-        =link_to "仮置きで" do
-          = image_tag "仮置き用.jpg"
-          .item-box-text
-            .text-box
-              %h4
-                test-image
-            .price
-              ¥10,000
-            .price-tax
-              (税込)
-            .nice
-              = fa_icon "heart"
-              %span
-                1
-      %li.item-box
-        =link_to "仮置きで" do
-          = image_tag "仮置き用.jpg"
-          .item-box-text
-            .text-box
-              %h4
-                test-image
-            .price
-              ¥10,000
-            .price-tax
-              (税込)
-            .nice
-              = fa_icon "heart"
-              %span
-                1
-      %li.item-box
-        =link_to "仮置きで" do
-          = image_tag "仮置き用.jpg"
-          .item-box-text
-            .text-box
-              %h4
-                test-image
-            .price
-              ¥10,000
-            .price-tax
-              (税込)
-            .nice
-              = fa_icon "heart"
-              %span
-                1
-      %li.item-box
-        =link_to "仮置きで" do
-          = image_tag "仮置き用.jpg"
-          .item-box-text
-            .text-box
-              %h4
-                test-image
-            .price
-              ¥10,000
-            .price-tax
-              (税込)
-            .nice
-              = fa_icon "heart"
-              %span
-                1
+      -@interior_items.each do |item|
+        %li.item-box
+          =link_to "仮置きで" do
+            = image_tag "item_images/#{item.item_images[0].image}"
+            .item-box-text
+              .text-box
+                %h4
+                  #{item.name}
+              .price
+                = number_to_currency(item.price, unit: "￥", strip_insignificant_zeros: true)
+              .price-tax
+                (税込)
+              .nice
+                = fa_icon "heart"
+                %span
+                #{item.likes.count}
     .view-all
       =link_to do
         すべての商品を見る
+
 %section.pickup-container
   %h2.pickup-head
     ピックアップブランド
   %section.item-boxs
     %h3
       = link_to do
-        シャネル新着アイテム
+        NIKE 新着アイテム
     %ul
-      %li.item-box
-        =link_to "仮置きで" do
-          = image_tag "仮置き用.jpg"
-          .item-box-text
-            .text-box
-              %h4
-                test-image
-            .price
-              ¥10,000
-            .price-tax
-              (税込)
-            .nice
-              %i.fa.fa-heart
-              %span
-                1
-      %li.item-box
-        =link_to "仮置きで" do
-          = image_tag "仮置き用.jpg"
-          .item-box-text
-            .text-box
-              %h4
-                test-image
-            .price
-              ¥10,000
-            .price-tax
-              (税込)
-            .nice
-              %i.fa.fa-heart
-              %span
-                1
-      %li.item-box
-        =link_to "仮置きで" do
-          = image_tag "仮置き用.jpg"
-          .item-box-text
-            .text-box
-              %h4
-                test-image
-            .price
-              ¥10,000
-            .price-tax
-              (税込)
-            .nice
-              %i.fa.fa-heart
-              %span
-                1
-      %li.item-box
-        =link_to "仮置きで" do
-          = image_tag "仮置き用.jpg"
-          .item-box-text
-            .text-box
-              %h4
-                test-image
-            .price
-              ¥10,000
-            .price-tax
-              (税込)
-            .nice
-              %i.fa.fa-heart
-              %span
-                1
+      -@nike_items.each do |item|
+        %li.item-box
+          =link_to "仮置きで" do
+            = image_tag "item_images/#{item.item_images[0].image}"
+            .item-box-text
+              .text-box
+                %h4
+                  #{item.name}
+              .price
+                = number_to_currency(item.price, unit: "￥", strip_insignificant_zeros: true)
+              .price-tax
+                (税込)
+              .nice
+                = fa_icon "heart"
+                %span
+                #{item.likes.count}
     .view-all
       =link_to do
         すべての商品を見る
   %section.item-boxs
     %h3
       = link_to do
-        シャネル新着アイテム
+        adidas 新着アイテム
     %ul
-      %li.item-box
-        =link_to "仮置きで" do
-          = image_tag "仮置き用.jpg"
-          .item-box-text
-            .text-box
-              %h4
-                test-image
-            .price
-              ¥10,000
-            .price-tax
-              (税込)
-            .nice
-              %i.fa.fa-heart
-              %span
-                1
-      %li.item-box
-        =link_to "仮置きで" do
-          = image_tag "仮置き用.jpg"
-          .item-box-text
-            .text-box
-              %h4
-                test-image
-            .price
-              ¥10,000
-            .price-tax
-              (税込)
-            .nice
-              %i.fa.fa-heart
-              %span
-                1
-      %li.item-box
-        =link_to "仮置きで" do
-          = image_tag "仮置き用.jpg"
-          .item-box-text
-            .text-box
-              %h4
-                test-image
-            .price
-              ¥10,000
-            .price-tax
-              (税込)
-            .nice
-              %i.fa.fa-heart
-              %span
-                1
-      %li.item-box
-        =link_to "仮置きで" do
-          = image_tag "仮置き用.jpg"
-          .item-box-text
-            .text-box
-              %h4
-                test-image
-            .price
-              ¥10,000
-            .price-tax
-              (税込)
-            .nice
-              %i.fa.fa-heart
-              %span
-                1
+      -@adidas_items.each do |item|
+        %li.item-box
+          =link_to "仮置きで" do
+            = image_tag "item_images/#{item.item_images[0].image}"
+            .item-box-text
+              .text-box
+                %h4
+                  #{item.name}
+              .price
+                = number_to_currency(item.price, unit: "￥", strip_insignificant_zeros: true)
+              .price-tax
+                (税込)
+              .nice
+                = fa_icon "heart"
+                %span
+                #{item.likes.count}
     .view-all
       =link_to do
         すべての商品を見る
+      
   %section.item-boxs
     %h3
       = link_to do
-        シャネル新着アイテム
+        PUMA 新着アイテム
     %ul
-      %li.item-box
-        =link_to "仮置きで" do
-          = image_tag "仮置き用.jpg"
-          .item-box-text
-            .text-box
-              %h4
-                test-image
-            .price
-              ¥10,000
-            .price-tax
-              (税込)
-            .nice
-              = fa_icon "heart"
-              %span
-                1
-      %li.item-box
-        =link_to "仮置きで" do
-          = image_tag "仮置き用.jpg"
-          .item-box-text
-            .text-box
-              %h4
-                test-image
-            .price
-              ¥10,000
-            .price-tax
-              (税込)
-            .nice
-              = fa_icon "heart"
-              %span
-                1
-      %li.item-box
-        =link_to "仮置きで" do
-          = image_tag "仮置き用.jpg"
-          .item-box-text
-            .text-box
-              %h4
-                test-image
-            .price
-              ¥10,000
-            .price-tax
-              (税込)
-            .nice
-              = fa_icon "heart"
-              %span
-                1
-      %li.item-box
-        =link_to "仮置きで" do
-          = image_tag "仮置き用.jpg"
-          .item-box-text
-            .text-box
-              %h4
-                test-image
-            .price
-              ¥10,000
-            .price-tax
-              (税込)
-            .nice
-              = fa_icon "heart"
-              %span
-                1
+      -@puma_items.each do |item|
+        %li.item-box
+          =link_to "仮置きで" do
+            = image_tag "item_images/#{item.item_images[0].image}"
+            .item-box-text
+              .text-box
+                %h4
+                  #{item.name}
+              .price
+                = number_to_currency(item.price, unit: "￥", strip_insignificant_zeros: true)
+              .price-tax
+                (税込)
+              .nice
+                = fa_icon "heart"
+                %span
+                #{item.likes.count}
     .view-all
       =link_to do
         すべての商品を見る
+      
   %section.item-boxs
     %h3
       = link_to do
-        シャネル新着アイテム
+        Reebok 新着アイテム
     %ul
-      %li.item-box
-        =link_to "仮置きで" do
-          = image_tag "仮置き用.jpg"
-          .item-box-text
-            .text-box
-              %h4
-                test-image
-            .price
-              ¥10,000
-            .price-tax
-              (税込)
-            .nice
-              = fa_icon "heart"
-              %span
-                1
-      %li.item-box
-        =link_to "仮置きで" do
-          = image_tag "仮置き用.jpg"
-          .item-box-text
-            .text-box
-              %h4
-                test-image
-            .price
-              ¥10,000
-            .price-tax
-              (税込)
-            .nice
-              = fa_icon "heart"
-              %span
-                1
-      %li.item-box
-        =link_to "仮置きで" do
-          = image_tag "仮置き用.jpg"
-          .item-box-text
-            .text-box
-              %h4
-                test-image
-            .price
-              ¥10,000
-            .price-tax
-              (税込)
-            .nice
-              = fa_icon "heart"
-              %span
-                1
-      %li.item-box
-        =link_to "仮置きで" do
-          = image_tag "仮置き用.jpg"
-          .item-box-text
-            .text-box
-              %h4
-                test-image
-            .price
-              ¥10,000
-            .price-tax
-              (税込)
-            .nice
-              = fa_icon "heart"
-              %span
-                1
-
-
-
+      -@reebok_items.each do |item|
+        %li.item-box
+          =link_to "仮置きで" do
+            = image_tag "item_images/#{item.item_images[0].image}"
+            .item-box-text
+              .text-box
+                %h4
+                  #{item.name}
+              .price
+                = number_to_currency(item.price, unit: "￥", strip_insignificant_zeros: true)
+              .price-tax
+                (税込)
+              .nice
+                = fa_icon "heart"
+                %span
+                #{item.likes.count}
     .view-all
       =link_to do
         すべての商品を見る
+      
   %section.item-boxs
     %h3
       = link_to do
-        シャネル新着アイテム
+        CONVERSE 新着アイテム
     %ul
-      %li.item-box
-        =link_to "仮置きで" do
-          = image_tag "仮置き用.jpg"
-          .item-box-text
-            .text-box
-              %h4
-                test-image
-            .price
-              ¥10,000
-            .price-tax
-              (税込)
-            .nice
-              = fa_icon "heart"
-              %span
-                1
-      %li.item-box
-        =link_to "仮置きで" do
-          = image_tag "仮置き用.jpg"
-          .item-box-text
-            .text-box
-              %h4
-                test-image
-            .price
-              ¥10,000
-            .price-tax
-              (税込)
-            .nice
-              = fa_icon "heart"
-              %span
-                1
-      %li.item-box
-        =link_to "仮置きで" do
-          = image_tag "仮置き用.jpg"
-          .item-box-text
-            .text-box
-              %h4
-                test-image
-            .price
-              ¥10,000
-            .price-tax
-              (税込)
-            .nice
-              = fa_icon "heart"
-              %span
-                1
-      %li.item-box
-        =link_to "仮置きで" do
-          = image_tag "仮置き用.jpg"
-          .item-box-text
-            .text-box
-              %h4
-                test-image
-            .price
-              ¥10,000
-            .price-tax
-              (税込)
-            .nice
-              = fa_icon "heart"
-              %span
-                1
+      -@converse_items.each do |item|
+        %li.item-box
+          =link_to "仮置きで" do
+            = image_tag "item_images/#{item.item_images[0].image}"
+            .item-box-text
+              .text-box
+                %h4
+                  #{item.name}
+              .price
+                = number_to_currency(item.price, unit: "￥", strip_insignificant_zeros: true)
+              .price-tax
+                (税込)
+              .nice
+                = fa_icon "heart"
+                %span
+                #{item.likes.count}
     .view-all
       =link_to do
         すべての商品を見る
+      
 
 = render partial: "footer"
