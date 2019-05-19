@@ -6,6 +6,7 @@ class Item < ApplicationRecord
   has_many :message_users,through: :messages,source: :user
   has_many :like_users,through: :likes,source: :user
   has_many :flag_users,through: :flags,source: :user
+
   belongs_to :order, optional: true
   belongs_to :profit, optional: true
   belongs_to :prefecture, optional: true
@@ -20,4 +21,5 @@ class Item < ApplicationRecord
   belongs_to :delivery_way, optional: true
   belongs_to :order_status, optional: true
   belongs_to :size, optional: true
+
 end
