@@ -93,7 +93,7 @@
     %i.fab.fa-pinterest-square
   .other-item-box
     %h2
-      = link_to "#{@item.user.nickname}さんのその他の商品"
+      = link_to "#{@item.user.nickname}さんのその他の商品", user_item_show_path 
     .other-item-contents
       -@user_items.each do |item|
         .other-item-contents__box
@@ -111,7 +111,7 @@
 
   .other-item-box
     %h2
-      = link_to " #{@item.third_category.third_category}(#{@item.first_category.first_category})のその他の商品"
+      = link_to "#{@item.third_category.third_category}(#{@item.first_category.first_category})のその他の商品", thirdcategory_path
     .other-item-contents
       -@category_items.each do |item|
         .other-item-contents__box
