@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2019_05_18_061611) do
   end
 
   create_table "delivery_charges", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "charge", default: ""
+    t.string "charge"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 2019_05_18_061611) do
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "user_id", null: false
     t.string "name", null: false
     t.integer "price", null: false
     t.text "description", null: false
@@ -237,6 +237,7 @@ ActiveRecord::Schema.define(version: 2019_05_18_061611) do
     t.text "introduction"
     t.datetime "remember_created_at"
     t.datetime "reset_password_sent_at"
+    t.integer "prefecture_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
