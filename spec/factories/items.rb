@@ -16,176 +16,41 @@ FactoryBot.define do
     association :order_status
     association :size
     
-    factory :ladies_item, class: Item do
-      name {"ABC"}
-      price {"1000"}
-      description {"aaaaa"}
+    trait :ladies_item, class: Item do
       first_category_id {"1"}
-      created_at { Faker::Time.between(2.days.ago, Time.now, :all) }
-      association :prefecture
-      association :user
-      association :first_category
-      association :second_category
-      association :third_category
-      association :brand
-      association :condition
-      association :delivery_charge
-      association :delivery_date
-      association :order_status
-      association :size
     end
 
-    factory :mens_item, class: Item do
-      name {"ABC"}
-      price {"1000"}
-      description {"aaaaa"}
+    trait :mens_item, class: Item do
       first_category_id {"2"}
-      created_at { Faker::Time.between(2.days.ago, Time.now, :all) }
-      association :prefecture
-      association :user
-      association :first_category
-      association :second_category
-      association :third_category
-      association :brand
-      association :condition
-      association :delivery_charge
-      association :delivery_date
-      association :order_status
-      association :size
     end
 
-    factory :baby_item, class: Item do
-      name {"ABC"}
-      price {"1000"}
-      description {"aaaaa"}
+    trait :baby_item, class: Item do
       first_category_id {"3"}
-      created_at { Faker::Time.between(2.days.ago, Time.now, :all) }
-      association :prefecture
-      association :user
-      association :first_category
-      association :second_category
-      association :third_category
-      association :brand
-      association :condition
-      association :delivery_charge
-      association :delivery_date
-      association :order_status
-      association :size
     end
 
-    factory :interior_item, class: Item do
-      name {"ABC"}
-      price {"1000"}
-      description {"aaaaa"}
+    trait :interior_item, class: Item do
       first_category_id {"4"}
-      created_at { Faker::Time.between(2.days.ago, Time.now, :all) }
-      association :prefecture
-      association :user
-      association :first_category
-      association :second_category
-      association :third_category
-      association :brand
-      association :condition
-      association :delivery_charge
-      association :delivery_date
-      association :order_status
-      association :size
     end
 
-    factory :nike_item, class: Item do
-      name {"ABC"}
-      price {"1000"}
-      description {"aaaaa"}
+    trait :nike_item, class: Item do
       brand_id {"2"}
-      created_at { Faker::Time.between(2.days.ago, Time.now, :all) }
-      association :prefecture
-      association :user
-      association :first_category
-      association :second_category
-      association :third_category
-      association :brand
-      association :condition
-      association :delivery_charge
-      association :delivery_date
-      association :order_status
-      association :size
     end
 
-    factory :adidas_item, class: Item do
-      name {"ABC"}
-      price {"1000"}
-      description {"aaaaa"}
+    trait :adidas_item, class: Item do
       brand_id {"3"}
-      created_at { Faker::Time.between(2.days.ago, Time.now, :all) }
-      association :prefecture
-      association :user
-      association :first_category
-      association :second_category
-      association :third_category
-      association :brand
-      association :condition
-      association :delivery_charge
-      association :delivery_date
-      association :order_status
-      association :size
     end
 
-    factory :puma_item, class: Item do
-      name {"ABC"}
-      price {"1000"}
-      description {"aaaaa"}
+    trait :puma_item, class: Item do
       brand_id {"4"}
-      created_at { Faker::Time.between(2.days.ago, Time.now, :all) }
-      association :prefecture
-      association :user
-      association :first_category
-      association :second_category
-      association :third_category
-      association :brand
-      association :condition
-      association :delivery_charge
-      association :delivery_date
-      association :order_status
-      association :size
     end
 
   
-    factory :reebok_item, class: Item do
-      name {"ABC"}
-      price {"1000"}
-      description {"aaaaa"}
+    trait :reebok_item, class: Item do
       brand_id {"5"}
-      created_at { Faker::Time.between(2.days.ago, Time.now, :all) }
-      association :prefecture
-      association :user
-      association :first_category
-      association :second_category
-      association :third_category
-      association :brand
-      association :condition
-      association :delivery_charge
-      association :delivery_date
-      association :order_status
-      association :size
     end
 
-    factory :converse_item, class: Item do
-      name {"ABC"}
-      price {"1000"}
-      description {"aaaaa"}
+    trait :converse_item, class: Item do
       brand_id {"6"}
-      created_at { Faker::Time.between(2.days.ago, Time.now, :all) }
-      association :prefecture
-      association :user
-      association :first_category
-      association :second_category
-      association :third_category
-      association :brand
-      association :condition
-      association :delivery_charge
-      association :delivery_date
-      association :order_status
-      association :size
     end
   end
 end
