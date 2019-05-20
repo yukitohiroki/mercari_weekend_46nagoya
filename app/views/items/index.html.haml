@@ -30,7 +30,7 @@
     %ul
       -@ladies_items.each do |item|
         %li.item-box
-          =link_to "items/#{item.id}" do
+          =link_to ("#{item.id}_path") do
             = image_tag "item_images/#{item.item_images[0].image}"
             .item-box-text
               .text-box
@@ -55,7 +55,7 @@
     %ul
       -@mens_items.each do |item|
         %li.item-box
-          =link_to "items/#{item.id}" do
+          =link_to ("#{item.id}_path") do
             = image_tag "item_images/#{item.item_images[0].image}"
             .item-box-text
               .text-box
@@ -80,7 +80,7 @@
     %ul
       -@baby_items.each do |item|
         %li.item-box
-          =link_to  "items/#{item.id}" do
+          =link_to ("#{item.id}_path") do
             = image_tag "item_images/#{item.item_images[0].image}"
             .item-box-text
               .text-box
@@ -133,7 +133,7 @@
     %ul
       -@nike_items.each do |item|
         %li.item-box
-          =link_to  "items/#{item.id}" do
+          =link_to ("#{item.id}_path") do
             = image_tag "item_images/#{item.item_images[0].image}"
             .item-box-text
               .text-box
@@ -157,7 +157,7 @@
     %ul
       -@adidas_items.each do |item|
         %li.item-box
-          =link_to  "items/#{item.id}" do
+          =link_to ("#{item.id}_path") do
             = image_tag "item_images/#{item.item_images[0].image}"
             .item-box-text
               .text-box
@@ -182,7 +182,7 @@
     %ul
       -@puma_items.each do |item|
         %li.item-box
-          =link_to  "items/#{item.id}" do
+          =link_to ("#{item.id}_path") do
             = image_tag "item_images/#{item.item_images[0].image}"
             .item-box-text
               .text-box
@@ -207,7 +207,7 @@
     %ul
       -@reebok_items.each do |item|
         %li.item-box
-          =link_to  "items/#{item.id}" do
+          =link_to ("#{item.id}_path") do
             = image_tag "item_images/#{item.item_images[0].image}"
             .item-box-text
               .text-box
@@ -232,7 +232,7 @@
     %ul
       -@converse_items.each do |item|
         %li.item-box
-          =link_to  "items/#{item.id}" do
+          =link_to ("#{item.id}_path") do
             = image_tag "item_images/#{item.item_images[0].image}"
             .item-box-text
               .text-box
