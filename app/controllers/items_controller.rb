@@ -18,8 +18,12 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item_images = @item.item_images(@item.id)
+    @item_images = @item.item_images
     @user = current_user
+    @user_items     = Item.includes(:item_images).where(user_id: @item.user.id).limit(6).order("created_at DESC")
+    @category_items = Item.includes(:item_images).where(third_category_id: @item.third_category.id).limit(6).order("created_at DESC")
+    @message  = Message.new
+    @messages = @item.messages.includes(:user)
   end
 
   def new

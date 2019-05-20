@@ -1,4 +1,5 @@
 FactoryBot.define do
+
   factory :item do
     name {"ABC"}
     price {"1000"}
@@ -15,42 +16,42 @@ FactoryBot.define do
     association :delivery_date
     association :order_status
     association :size
-    
-    trait :ladies_item, class: Item do
-      first_category_id {"1"}
+
+    trait :ladies_item do
+      first_category_id {1}
     end
 
-    trait :mens_item, class: Item do
-      first_category_id {"2"}
+    trait :mens_item do
+      first_category_id {2}
     end
 
-    trait :baby_item, class: Item do
-      first_category_id {"3"}
+    trait :baby_item do
+      first_category_id {3}
     end
 
-    trait :interior_item, class: Item do
-      first_category_id {"4"}
+    trait :interior_item do
+      first_category_id {4}
     end
 
-    trait :nike_item, class: Item do
-      brand_id {"2"}
+    trait :nike_item do
+      brand_id {2}
     end
 
-    trait :adidas_item, class: Item do
-      brand_id {"3"}
+    trait :adidas_item do
+      brand_id {3}
     end
 
-    trait :puma_item, class: Item do
-      brand_id {"4"}
+    trait :puma_item do
+      brand_id {4}
     end
 
-  
-    trait :reebok_item, class: Item do
-      brand_id {"5"}
+    trait :reebok_item do
+      brand_id {5}
     end
 
-    trait :converse_item, class: Item do
-      brand_id {"6"}
+    trait :converse_item do
+      brand_id {6}
     end
+
   end
 end
