@@ -29,21 +29,7 @@
         レディース 新着アイテム
     %ul
       -@ladies_items.each do |item|
-        %li.item-box
-          =link_to ("#{item.id}_path") do
-            = image_tag "item_images/#{item.item_images[0].image}"
-            .item-box-text
-              .text-box
-                %h4
-                  #{item.name}
-              .price
-                = number_to_currency(item.price, unit: "￥", strip_insignificant_zeros: true)
-              .price-tax
-                (税込)
-              .nice
-                = fa_icon "heart"
-                %span
-                #{item.likes.count}
+        = render partial: "item", locals: { item: item }
     .view-all
       =link_to do
         すべての商品を見る
@@ -54,21 +40,7 @@
         メンズ 新着アイテム
     %ul
       -@mens_items.each do |item|
-        %li.item-box
-          =link_to ("#{item.id}_path") do
-            = image_tag "item_images/#{item.item_images[0].image}"
-            .item-box-text
-              .text-box
-                %h4
-                  #{item.name}
-              .price
-                = number_to_currency(item.price, unit: "￥", strip_insignificant_zeros: true)
-              .price-tax
-                (税込)
-              .nice
-                = fa_icon "heart"
-                %span
-                #{item.likes.count}
+        = render partial: "item", locals: { item: item }
     .view-all
       =link_to do
         すべての商品を見る
@@ -79,21 +51,7 @@
         ベビー・キッズ 新着アイテム
     %ul
       -@baby_items.each do |item|
-        %li.item-box
-          =link_to ("#{item.id}_path") do
-            = image_tag "item_images/#{item.item_images[0].image}"
-            .item-box-text
-              .text-box
-                %h4
-                  #{item.name}
-              .price
-                = number_to_currency(item.price, unit: "￥", strip_insignificant_zeros: true)
-              .price-tax
-                (税込)
-              .nice
-                = fa_icon "heart"
-                %span
-                #{item.likes.count}
+        = render partial: "item", locals: { item: item }
     .view-all
       =link_to do
         すべての商品を見る
@@ -104,21 +62,7 @@
         インテリア・住まい・小物 新着アイテム
     %ul
       -@interior_items.each do |item|
-        %li.item-box
-          =link_to  "items/#{item.id}" do
-            = image_tag "item_images/#{item.item_images[0].image}"
-            .item-box-text
-              .text-box
-                %h4
-                  #{item.name}
-              .price
-                = number_to_currency(item.price, unit: "￥", strip_insignificant_zeros: true)
-              .price-tax
-                (税込)
-              .nice
-                = fa_icon "heart"
-                %span
-                #{item.likes.count}
+        = render partial: "item", locals: { item: item }
     .view-all
       =link_to do
         すべての商品を見る
@@ -132,21 +76,7 @@
         NIKE 新着アイテム
     %ul
       -@nike_items.each do |item|
-        %li.item-box
-          =link_to ("#{item.id}_path") do
-            = image_tag "item_images/#{item.item_images[0].image}"
-            .item-box-text
-              .text-box
-                %h4
-                  #{item.name}
-              .price
-                = number_to_currency(item.price, unit: "￥", strip_insignificant_zeros: true)
-              .price-tax
-                (税込)
-              .nice
-                = fa_icon "heart"
-                %span
-                #{item.likes.count}
+        = render partial: "item", locals: { item: item }
     .view-all
       =link_to do
         すべての商品を見る
@@ -156,46 +86,17 @@
         adidas 新着アイテム
     %ul
       -@adidas_items.each do |item|
-        %li.item-box
-          =link_to ("#{item.id}_path") do
-            = image_tag "item_images/#{item.item_images[0].image}"
-            .item-box-text
-              .text-box
-                %h4
-                  #{item.name}
-              .price
-                = number_to_currency(item.price, unit: "￥", strip_insignificant_zeros: true)
-              .price-tax
-                (税込)
-              .nice
-                = fa_icon "heart"
-                %span
-                #{item.likes.count}
+        = render partial: "item", locals: { item: item }
     .view-all
       =link_to do
         すべての商品を見る
-      
   %section.item-boxs
     %h3
       = link_to do
         PUMA 新着アイテム
     %ul
       -@puma_items.each do |item|
-        %li.item-box
-          =link_to ("#{item.id}_path") do
-            = image_tag "item_images/#{item.item_images[0].image}"
-            .item-box-text
-              .text-box
-                %h4
-                  #{item.name}
-              .price
-                = number_to_currency(item.price, unit: "￥", strip_insignificant_zeros: true)
-              .price-tax
-                (税込)
-              .nice
-                = fa_icon "heart"
-                %span
-                #{item.likes.count}
+        = render partial: "item", locals: { item: item }
     .view-all
       =link_to do
         すべての商品を見る
@@ -206,49 +107,19 @@
         Reebok 新着アイテム
     %ul
       -@reebok_items.each do |item|
-        %li.item-box
-          =link_to ("#{item.id}_path") do
-            = image_tag "item_images/#{item.item_images[0].image}"
-            .item-box-text
-              .text-box
-                %h4
-                  #{item.name}
-              .price
-                = number_to_currency(item.price, unit: "￥", strip_insignificant_zeros: true)
-              .price-tax
-                (税込)
-              .nice
-                = fa_icon "heart"
-                %span
-                #{item.likes.count}
+        = render partial: "item", locals: { item: item }
     .view-all
       =link_to do
         すべての商品を見る
-      
   %section.item-boxs
     %h3
       = link_to do
         CONVERSE 新着アイテム
     %ul
       -@converse_items.each do |item|
-        %li.item-box
-          =link_to ("#{item.id}_path") do
-            = image_tag "item_images/#{item.item_images[0].image}"
-            .item-box-text
-              .text-box
-                %h4
-                  #{item.name}
-              .price
-                = number_to_currency(item.price, unit: "￥", strip_insignificant_zeros: true)
-              .price-tax
-                (税込)
-              .nice
-                = fa_icon "heart"
-                %span
-                #{item.likes.count}
+        = render partial: "item", locals: { item: item }
     .view-all
       =link_to do
         すべての商品を見る
-      
 
 = render partial: "footer"
