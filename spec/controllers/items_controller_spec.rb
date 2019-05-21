@@ -4,7 +4,9 @@ RSpec.describe ItemsController, type: :controller do
 
   describe 'GET #index' do
 
-  before_action :get :index
+    before do
+      get :index
+    end
 
     it "正しいビューに変遷する" do
       expect(response).to render_template :index

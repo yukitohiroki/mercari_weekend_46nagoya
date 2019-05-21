@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2019_05_18_061611) do
   end
 
   create_table "delivery_charges", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "charge"
+    t.string "charge", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -65,15 +65,15 @@ ActiveRecord::Schema.define(version: 2019_05_18_061611) do
 
   create_table "item_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "image", null: false
-    t.integer "item_id", null: false
+    t.integer "item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.string "name", null: false
-    t.integer "price", null: false
+    t.integer "user_id"
+    t.string "name", default: "", null: false
+    t.integer "price"
     t.text "description", null: false
     t.integer "first_category_id"
     t.integer "second_category_id"
@@ -85,8 +85,8 @@ ActiveRecord::Schema.define(version: 2019_05_18_061611) do
     t.integer "prefecture_id"
     t.integer "delivery_date_id"
     t.integer "order_status_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer "delivery_way_id"
   end
 
@@ -149,9 +149,9 @@ ActiveRecord::Schema.define(version: 2019_05_18_061611) do
   end
 
   create_table "prefectures", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "prefecture", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "prefecture", default: ""
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "profits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -180,9 +180,9 @@ ActiveRecord::Schema.define(version: 2019_05_18_061611) do
   create_table "second_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "first_category_id"
     t.integer "size_category_id"
-    t.string "second_category", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "second_category", default: ""
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "size_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -209,9 +209,9 @@ ActiveRecord::Schema.define(version: 2019_05_18_061611) do
 
   create_table "third_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "second_category_id"
-    t.string "third_category", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "third_category", default: ""
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -237,7 +237,6 @@ ActiveRecord::Schema.define(version: 2019_05_18_061611) do
     t.text "introduction"
     t.datetime "remember_created_at"
     t.datetime "reset_password_sent_at"
-    t.integer "prefecture_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
