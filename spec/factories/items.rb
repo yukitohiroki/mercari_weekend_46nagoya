@@ -16,42 +16,41 @@ FactoryBot.define do
     association :delivery_date
     association :order_status
     association :size
+  end
 
-    trait :ladies_item do
-      first_category_id {1}
-    end
+  factory :ladies_item, class: 'Item' do
+    first_category_id {1}
+  end
 
-    trait :mens_item do
-      first_category_id {2}
-    end
+  factory :mens_item, class: 'Item' do
+    first_category_id {2}
+  end
 
-    trait :baby_item do
-      first_category_id {3}
-    end
+  factory :baby_item, class: 'Item' do
+    first_category_id {3}
+  end
 
-    trait :interior_item do
-      first_category_id {4}
-    end
+  factory :interior_item, class: 'Item' do
+    first_category_id {4}
+  end
 
-    trait :nike_item do
-      brand_id {2}
-    end
+  factory :nike_item, class: 'Item' do
+    brand_id {2}
+  end
 
-    trait :adidas_item do
-      brand_id {3}
-    end
+  factory :adidas_item, class: 'Item' do
+    brand_id {3}
+  end
 
-    trait :puma_item do
-      brand_id {4}
-    end
+  factory :puma_item, class: 'Item' do
+    brand_id {4}
+  end
 
-    trait :reebok_item do
-      brand_id {5}
-    end
+  factory :reebok_item, class: 'Item' do
+    brand_id {5}
+  end
 
-    trait :converse_item do
-      brand_id {6}
-    end
-
+  factory :converse_item, class: 'Item' do
+    brand_id {6}
   end
 end
