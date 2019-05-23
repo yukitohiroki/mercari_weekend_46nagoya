@@ -1,5 +1,6 @@
 FactoryBot.define do
   factory :item_image do
-    
-  end
+    image {"aaa.jpg"}
+    association :item
+  end    
 end
