@@ -53,4 +53,11 @@ FactoryBot.define do
   factory :converse_item, class: 'Item' do
     brand_id {6}
   end
+
+  factory :user_item, class: 'Item' do	
+  end	
+
+  factory :category_item, class: 'Item' do	
+    third_category_id {1}	
+  end
 end

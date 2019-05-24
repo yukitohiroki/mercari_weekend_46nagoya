@@ -57,4 +57,49 @@ RSpec.describe ItemsController, type: :controller do
       expect(assigns(:converse_items)).to match(converse_items.sort{ |a, b| b.created_at <=> a.created_at } )
     end
   end
+
+  describe 'GET #show' do	
+    let(:user) { create(:user) }	
+
+     before do	
+      @item = create(:item)	
+      get :show, params: {id: @item}	
+    end	
+
+     it "正しいビューに変遷する" do	
+      expect(response).to render_template :show	
+    end	
+
+     it "@itemが期待される値を持つ" do	
+      expect(assigns(:item)).to eq @item	
+    end	
+
+     it "@item_imagesが期待される配列を持つ" do 	
+      expect(assigns(:item_images)).to match(@item.item_images)	
+    end	
+
+     it "@userが期待される値を持つ" do	
+      expect(assigns(:user)).to eq @user	
+    end	
+
+     it "@user_itemsが期待される配列を持つ" do	
+      user_items =FactoryBot.create_list(:user_item, 6, user_id: @item.user.id)	
+      expect(assigns(:user_items)).to match(user_items.sort{ |a, b| b.created_at <=> a.created_at } )	
+    end	
+
+     it "@category_itemsが期待される配列を持つ" do	
+      category_items =FactoryBot.create_list(:category_item, 6, third_category: @item.third_category)	
+      expect(assigns(:category_items)).to match(category_items.sort{ |a, b| b.created_at <=> a.created_at } )	
+    end	
+
+     it "@messageが生成される" do	
+      message = create(:message)	
+      expect(assigns(:message)).to be_a_new(Message)	
+    end	
+
+     it "@messagesが期待される配列を持つ" do	
+      message = create_list(:message, 5,  user_id: user.id)	
+      expect(assigns(:messages)).to match(@item.messages)	
+    end	
+  end	
 end
