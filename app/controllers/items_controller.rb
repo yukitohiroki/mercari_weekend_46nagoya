@@ -5,25 +5,13 @@ class ItemsController < ApplicationController
   before_action :set_Category, only: [:new, :create, :edit, :update]
 
   def index
-    @ladies_items   = Item.includes(:item_images).where(first_category_id:1).limit(4).order("created_at DESC")
-    @mens_items     = Item.includes(:item_images).where(first_category_id:2).limit(4).order("created_at DESC")
-    @baby_items     = Item.includes(:item_images).where(first_category_id:3).limit(4).order("created_at DESC")
-    @interior_items = Item.includes(:item_images).where(first_category_id:4).limit(4).order("created_at DESC")
-
-    @nike_items     = Item.includes(:item_images).where(brand_id:2).limit(4).order("created_at DESC")
-    @adidas_items   = Item.includes(:item_images).where(brand_id:3).limit(4).order("created_at DESC")
-    @puma_items     = Item.includes(:item_images).where(brand_id:4).limit(4).order("created_at DESC")
-    @reebok_items   = Item.includes(:item_images).where(brand_id:5).limit(4).order("created_at DESC")
-    @converse_items = Item.includes(:item_images).where(brand_id:6).limit(4).order("created_at DESC")
+    @items = Item.includes(:item_images).limit(4).order("created_at DESC")
+    @item_images =ItemImage.all
   end
 
   def show
-    @item_images = @item.item_images
+    @item_images = @item.item_images(@item.id)
     @user = current_user
-    @user_items     = Item.includes(:item_images).where(user_id: @item.user.id).limit(6).order("created_at DESC")
-    @category_items = Item.includes(:item_images).where(third_category_id: @item.third_category.id).limit(6).order("created_at DESC")
-    @message  = Message.new
-    @messages = @item.messages.includes(:user)
   end
 
   def new
