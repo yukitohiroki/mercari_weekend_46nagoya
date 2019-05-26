@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :move_to_index
+
   def index
   end
 
