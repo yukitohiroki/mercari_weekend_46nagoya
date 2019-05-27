@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item_images = @item.item_images(@item.id)
+    @item_images = @item.item_images.where(item_id: @item.id)
     @user = current_user
   end
 
