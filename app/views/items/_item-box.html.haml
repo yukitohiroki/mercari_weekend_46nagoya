@@ -1,6 +1,9 @@
 %li.item-box
   = link_to item_path(item) do
     = image_tag"#{item.item_images[0]&.image}", alt: ""
+    -if item.order_status_id == 2
+      .sold-out-box
+        .sold-out-text SOLD
     .item-box-text
       .text-box
         %h4
