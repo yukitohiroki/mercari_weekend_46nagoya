@@ -21,5 +21,5 @@ class Item < ApplicationRecord
   belongs_to :delivery_way, optional: true
   belongs_to :order_status, optional: true
   belongs_to :size, optional: true
-
+  accepts_nested_attributes_for :item_images
 end
