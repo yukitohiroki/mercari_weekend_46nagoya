@@ -6,7 +6,6 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.includes(:item_images).limit(4).order("created_at DESC")
-    @item_images =ItemImage.all
   end
 
   def show
@@ -16,9 +15,9 @@ class ItemsController < ApplicationController
 
   def new
     @item = current_user.items.new
-    4.times{@item.item_images.build}
-
+    @item_images = 4.times{@item.item_images.build}
   end
+
   def create
     @item = current_user.items.new(item_params)
     if @item.save
@@ -54,6 +53,7 @@ class ItemsController < ApplicationController
   def secondcategory
     @secondcategory = SecondCategory.where(first_category_id: params[:item][:first_category_id])
   end
+
   def thirdcategory
     @thirdcategory = ThirdCategory.where(second_category_id: params[:item][:second_category_id])
   end
@@ -109,20 +109,14 @@ class ItemsController < ApplicationController
       :size_id, :condition_id, :delivery_charge_id, :prefecture_id,
       :delivery_date_id, :order_status_id, :delivery_way_id, item_images_attributes:[:id, :image, :_destroy])
   end
+  
   def set_item
     @item = Item.find(params[:id])
-  end
-  def set_Category
-    @first = FirstCategory.all
-    @second = SecondCategory.all
-  end
-  def set_item
-    @item = Item.find(params[:id])
-  end
-  def set_Category
-    @first = FirstCategory.all
-    @second = SecondCategory.all
   end
 
+  def set_Category
+    @first = FirstCategory.all
+    @second = SecondCategory.all
+  end
 end
 
