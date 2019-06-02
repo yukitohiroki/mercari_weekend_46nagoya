@@ -85,6 +85,7 @@ gem 'pry-rails'
 
 gem 'rails-i18n'
 
+gem 'unicorn-worker-killer'
 gem 'gretel'
 gem 'fog-aws'
 gem 'carrierwave'
