@@ -95,7 +95,7 @@
     %h2
       = link_to "#{@item.user.nickname}さんのその他の商品", user_item_show_path(@item)
     .other-item-contents
-      -@user.items.first(6).each do |item|
+      -@item.user.items.first(6).each do |item|
         .other-item-contents__box
           = link_to "#{item.id}" do
             .photo
