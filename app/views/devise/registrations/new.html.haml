@@ -56,7 +56,7 @@
         %span.form-require
           必須
         %br/
-        = f.text_field :prefecture,placeholder:"例）愛知県"
+        = f.collection_select :prefecture_id, Prefecture.all, :id, :prefecture,{prompt: '選択してください'}, class: "form--prefecture"
       .sign-up-main__form__field
         = f.label :市町村
         %span.form-require

@@ -54,7 +54,7 @@
           %td #{@item.delivery_date.date}
     .item-container__price
       %span.item-price
-        = number_to_currency(@item.price, unit: "￥", strip_insignificant_zeros: true)
+        = number_to_currency(@item.price, format:"%u%n", unit: "￥", strip_insignificant_zeros: true)
       %span.item-taxIn
         (税込)
       %span.item-tax-include
