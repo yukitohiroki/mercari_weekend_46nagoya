@@ -1,0 +1,62 @@
+= render partial:'layouts/sellheader'
+.single-main
+  .l-single
+    %h2.l-single__head 購入内容の確認
+    .buy-item
+      .buy-item__inner
+        .buy-item__inner__image
+          = image_tag "#{@item_images[0]&.image}", alt: "", id: "main-box"
+        .buy-item__inner_name
+          #{@item.name}
+        .buy-item__inner__price
+          %span.item-price
+            = number_to_currency(@item.price, format:"%u%n", unit: "￥", strip_insignificant_zeros: true)
+          %span.item-tax-include
+            送料込み
+        -if @user.point_amount >= 0
+          .buy-accordion.not-have
+            .accordion-parent
+              #{@user.point_amount}ポイントを使用する
+        -else
+          .buy-accordion.not-have1
+            .accordion-parent1
+              ポイントはありません
+        .buy-price-table
+          .buy-price-cell
+            支払い金額
+          .data-buy-pay
+            = number_to_currency(@item.price, format:"%u%n", unit: "￥", strip_insignificant_zeros: true)
+        .has-error-text
+          この商品はアプリから購入できます。
+          = form_tag(action: :pay, method: :post, class: :"buy-accordion.not-have") do
+            %script.payjp-button{"data-key" => "pk_test_00ff76d8e072d9b17859bd34", src: "https://checkout.pay.jp", :type => "text/javascript", "data-text" => "購入する", "data-submit-text" => "支払い完了", "data-payjp" => "016e8973300880b74ce3a321e59faa6ed94aa751"}
+            = hidden_field_tag :price, @item.price
+            = hidden_field_tag :user_id, @user.id
+            -#   = hidden_field_tag :customer_id, @user.customer_id
+        %p アプリをお持ちでない方は以下よりインストールしてご利用いただけます。
+        .icon
+          %a{href: "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", target: "_blank"}
+            %img{alt:"", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?3547997460"}
+          %a{href: "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", target: "_blank"}
+            %img{alt: "", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?3547997460"}
+      .buy-content.buy-user-info
+        .buy-content-inner
+          %h3 配送先
+          .buy-user-info-text
+            #{converting_zip_code(current_user.zip_code)}
+            %br
+            #{@user.prefecture.prefecture} #{@user.city} #{@user.address}
+            %br
+            #{@user.last_name} #{@user.first_name}
+          .buy-user-info-fix
+            %span 変更する
+            %i.icon-arrow-right
+      .buy-content.buy-user-info
+        .buy-content-inner
+          %h3 支払い方法
+          .buy-user-info-fix
+            %br
+            %br
+            %span 変更する
+= render partial:'layouts/sellfooter'
+
