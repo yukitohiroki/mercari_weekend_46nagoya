@@ -9,7 +9,7 @@
         %h4
         #{item.name}
       .price
-        = number_to_currency(item.price, unit: "￥", strip_insignificant_zeros: true)
+        = number_to_currency(item.price, format:"%u%n", unit: "￥", strip_insignificant_zeros: true)
       .price-tax
         (税込)
       .nice
