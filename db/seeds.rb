@@ -68,7 +68,7 @@ end
 CSV.foreach('db/second_categories.csv', headers: true) do |row|
   SecondCategory.create(
     first_category_id: row['first_category_id'],
-    size_category_id: rwo['size_category_id'],
+    size_category_id: row['size_category_id'],
     second_category:   row['second_category'],
     created_at: row['created_at'],
     updated_at: row['updated_at']
