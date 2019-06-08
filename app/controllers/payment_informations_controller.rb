@@ -10,7 +10,6 @@ class PaymentInformationsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @payment_information = PaymentInformation.create(payment_information_params)
 
     if @payment_information.save
@@ -22,7 +21,6 @@ class PaymentInformationsController < ApplicationController
   end
 
   def destroy
-    # binding.pry
     @user = User.find(params[:user_id])
     PaymentInformation.find(params[:id]).destroy if @user == current_user
 
