@@ -102,7 +102,6 @@ class ItemsController < ApplicationController
 
   def order_confirm
     @item_images = @item.item_images
-    @user = current_user
   end
 
   private
