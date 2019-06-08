@@ -1,0 +1,10 @@
+= render partial: "items/header"
+.default-container
+  .breads
+    - breadcrumb :pay_info
+    = breadcrumbs separator: "#{content_tag(:i, '', :class=>'fa fa-caret-right')}"
+  %main.large-container.clearfix
+    .large-content
+      =render partial: "entrance"
+    =render partial: "users/mypage-left-side"
+= render partial: "items/footer"
