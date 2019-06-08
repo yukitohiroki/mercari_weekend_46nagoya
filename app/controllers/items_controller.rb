@@ -101,7 +101,7 @@ class ItemsController < ApplicationController
   end
 
   def order_confirm
-    @item_images = @item.item_images.where(item_id: @item.id)
+    @item_images = @item.item_images
     @user = current_user
   end
 
