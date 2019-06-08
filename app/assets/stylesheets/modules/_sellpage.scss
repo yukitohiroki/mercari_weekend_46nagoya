@@ -158,6 +158,22 @@ main {
     margin: 8px 0 0;
   }
 }
+
+#item_first_category_id,#item_second_category_id,#item_third_category_id{
+  position: relative;
+  z-index: 2;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: 1px solid $formborder;
+  background: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+
 .input__default {
   padding: 10px 16px 8px;
   border-radius: 4px;

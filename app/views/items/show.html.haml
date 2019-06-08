@@ -54,7 +54,7 @@
           %td #{@item.delivery_date.date}
     .item-container__price
       %span.item-price
-        = number_to_currency(@item.price, unit: "￥", strip_insignificant_zeros: true)
+        = number_to_currency(@item.price, format:"%u%n", unit: "￥", strip_insignificant_zeros: true)
       %span.item-taxIn
         (税込)
       %span.item-tax-include
@@ -62,11 +62,13 @@
       -if user_signed_in?
         -if @item.user_id != current_user.id
           -if @item.order_status_id == 1
-            = form_tag(action: :pay, method: :post) do
-              %script.payjp-button{"data-key" => "pk_test_00ff76d8e072d9b17859bd34", src: "https://checkout.pay.jp", :type => "text/javascript", "data-text" => "商品を購入する", "data-submit-text" => "支払い完了", "data-payjp" => "016e8973300880b74ce3a321e59faa6ed94aa751"}
-              = hidden_field_tag :price, @item.price
-              = hidden_field_tag :user_id, @user.id
-              -# = hidden_field_tag :customer_id, @user.customer_id
+            = link_to order_confirm_path(@item) do
+              .order-status1 購入画面に進む 
+            -# = form_tag(action: :pay, method: :post) do
+            -#   %script.payjp-button{"data-key" => "pk_test_00ff76d8e072d9b17859bd34", src: "https://checkout.pay.jp", :type => "text/javascript", "data-text" => "商品を購入する", "data-submit-text" => "支払い完了", "data-payjp" => "016e8973300880b74ce3a321e59faa6ed94aa751"}
+            -#   = hidden_field_tag :price, @item.price
+            -#   = hidden_field_tag :user_id, @user.id
+            -#   = hidden_field_tag :customer_id, @user.customer_id
           -elsif @item.order_status_id == 2
             .order-status この商品は売却済です
         -else
@@ -95,7 +97,7 @@
     %h2
       = link_to "#{@item.user.nickname}さんのその他の商品", user_item_show_path(@item)
     .other-item-contents
-      -@user.items.first(6).each do |item|
+      -@item.user.items.first(6).each do |item|
         .other-item-contents__box
           = link_to "#{item.id}" do
             .photo

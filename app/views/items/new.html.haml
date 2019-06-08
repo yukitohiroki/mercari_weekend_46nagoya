@@ -38,8 +38,7 @@
                     カテゴリー
                     %span.form--require 必須
                   %div
-                    .select--wrap
-                      = f.select :first_category_id, options_from_collection_for_select( @first, :id, :first_category),{prompt: '---'}, {data: {remote: true, url: url_for(action: :secondcategory)}}
+                    = f.select :first_category_id, options_from_collection_for_select( @first, :id, :first_category),{prompt: '---'}, {data: {remote: true, url: url_for(action: :secondcategory)}}
                     #second-select
                     #third-select
                 .form__group
@@ -50,8 +49,8 @@
                 .form__group
                   %label
                     ブランド
-                    %span 任意
-                  = f.text_field :brand_id, class: "input__default"
+                    %span.form--require 必須
+                  = f.collection_select :brand_id, Brand.all, :id, :brand,{prompt: '---'}, class: "select__default"
                 .form__group
                   %label
                     商品の状態
