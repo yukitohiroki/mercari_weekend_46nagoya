@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
   before_action :authenticate_user!, except: [:index,:show]
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: [:show, :edit, :update, :destroy, :order_confirm]
   before_action :set_Category, only: [:new, :create, :edit, :update]
 
   def index
@@ -100,6 +100,10 @@ class ItemsController < ApplicationController
     redirect_to root_path
   end
 
+  def order_confirm
+    @item_images = @item.item_images
+  end
+
   private
 
   def item_params
@@ -119,4 +123,3 @@ class ItemsController < ApplicationController
     @second = SecondCategory.all
   end
 end
-
