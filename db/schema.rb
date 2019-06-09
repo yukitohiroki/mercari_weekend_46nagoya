@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_09_084206) do
+ActiveRecord::Schema.define(version: 2019_06_09_103253) do
 
   create_table "brand_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "brand_id"
@@ -239,7 +239,7 @@ ActiveRecord::Schema.define(version: 2019_06_09_084206) do
     t.integer "birth_year", null: false
     t.integer "birth_month", null: false
     t.integer "birth_day", null: false
-    t.integer "point_id", default: 0
+    t.integer "point_id"
     t.integer "profit_amount"
     t.text "user_icon"
     t.text "introduction"
@@ -248,8 +248,6 @@ ActiveRecord::Schema.define(version: 2019_06_09_084206) do
     t.integer "prefecture_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "sns_credentials", "users"
