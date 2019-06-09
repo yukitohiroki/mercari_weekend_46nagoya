@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_08_075607) do
+ActiveRecord::Schema.define(version: 2019_06_09_084206) do
 
   create_table "brand_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "brand_id"
@@ -239,7 +239,7 @@ ActiveRecord::Schema.define(version: 2019_06_08_075607) do
     t.integer "birth_year", null: false
     t.integer "birth_month", null: false
     t.integer "birth_day", null: false
-    t.integer "point_amount", default: 0
+    t.integer "point_id", default: 0
     t.integer "profit_amount"
     t.text "user_icon"
     t.text "introduction"
