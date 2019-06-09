@@ -13,10 +13,10 @@
             = number_to_currency(@item.price, format:"%u%n", unit: "￥", strip_insignificant_zeros: true)
           %span.item-tax-include
             送料込み
-        -if current_user.point_amount >= 0
+        -if current_user.points[0].amount >= 0
           .buy-accordion
             .accordion-parent
-              #{current_user.point_amount}ポイントを使用する
+              #{current_user.points[0].amount}ポイントを使用する
         -else
           .buy-accordion.not-have
             .accordion-parent1
