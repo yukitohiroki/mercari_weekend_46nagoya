@@ -25,7 +25,7 @@
 
     .card-information {
       float: left;
-      width: 200px;
+      width: 300px;
       height: 100%;
       margin-bottom: 25px;
       margin-top: 15px;
@@ -50,19 +50,18 @@
       }
     }
 
-    .destroy-infomation {
-      float: left;
-      width: 100px;
-      height:180px;
+      a {
+        float:right;
+        font-size:0.75em;
+        display:block;
+        width:100px;
+        padding-top:10px;
+        padding-bottom:10px;
+        text-align:center;
+        border:2px solid;
+        border-color:red;
+        color:red;
 
-      .delete-button {
-        border: 2px red;
-
-        a {
-          padding:100px 20px 20px 20px;
-          border: 2px red;
-        }
-      }
     }
   }
 
