@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
 
   before_action :authenticate_user!, except: [:index,:show]
   before_action :set_item, only: [:show, :edit, :update, :destroy, :order_confirm]
-  before_action :set_Category, only: [:new, :create, :edit, :update]
+  before_action :set_Category, only: [:new, :create, :edit, :update, :search]
 
   def index
     @items = Item.includes(:item_images).limit(4).order("created_at DESC")
@@ -102,6 +102,9 @@ class ItemsController < ApplicationController
 
   def order_confirm
     @item_images = @item.item_images
+  end
+
+  def search
   end
 
   private

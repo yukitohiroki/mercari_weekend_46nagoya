@@ -4,10 +4,12 @@
       =link_to root_path do
         = image_tag("header-footer_images/mercari-coloful_logo.svg", class: "logo-and-search__logo left-float")
       .search
-        %form.logo-and-search__search.right-float
-          %input{value:"", placeholder:"キーワードから探す" }
-          = link_to do
-            %i.fa.fa-search
+        = search_form_for @search, url: search_path do |f|
+          .logo-and-search__search.right-float
+            = f.search_field :name_cont, placeholder:"キーワードから探す"
+            = button_tag type:"submit" do
+              %i.fa.fa-search
+        %end
     .lists.clearfix
       .lists__left.left-float
         %ul
