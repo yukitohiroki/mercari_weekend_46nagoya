@@ -58,6 +58,16 @@ class ItemsController < ApplicationController
     @thirdcategory = ThirdCategory.where(second_category_id: params[:item][:second_category_id])
   end
 
+  def search_secondcategory
+    @secondcategory = SecondCategory.where(first_category_id: params[:q][:first_category_id_eq])
+  end
+
+  def search_thirdcategory
+    @thirdcategory = ThirdCategory.where(second_category_id: params[:q][:second_category_id_eq])
+  end
+
+
+
     Payjp::api_key ='sk_test_c5be69e2d1ccf9815f894a2d'
 
   def self.create_token(number, cvc, exp_year, exp_month)
