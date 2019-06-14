@@ -8,7 +8,7 @@
       %h2
       検索結果
     .large-content__search-result__number
-      #{@search_items}件表示
+      #{@search_items.count}件表示
     .large-content__search-result__item
       - @search_items.each do |item|
         = render partial: 'items/search_item-box', locals: {item:item}
@@ -22,7 +22,9 @@
           = f.text_field :name_cont, placeholder:" 入力してください"
         .left-side__box
           = f.label :カテゴリー検索
-          = f.collection_select :first_category_id_eq, FirstCategory.all, :id, :first_category,{prompt: '選択してください'}
+          = f.select :first_category_id, options_from_collection_for_select( @first, :id, :first_category),{prompt: '選択してください'}, {data: {remote: true, url: url_for(action: :secondcategory)}}
+          #second-select
+          #third-select
         .left-side__box
           = f.label :ブランド検索
           = f.collection_select :brand_id_eq, Brand.all, :id, :brand,{prompt: '選択してください'}
