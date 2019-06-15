@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_09_103253) do
+ActiveRecord::Schema.define(version: 2019_06_14_125228) do
 
   create_table "brand_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "brand_id"
@@ -64,17 +64,17 @@ ActiveRecord::Schema.define(version: 2019_06_09_103253) do
   end
 
   create_table "item_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "image"
-    t.integer "item_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.text "image", null: false
+    t.integer "item_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "name", default: ""
-    t.integer "price"
-    t.text "description"
+    t.integer "user_id", null: false
+    t.string "name", null: false
+    t.integer "price", null: false
+    t.text "description", null: false
     t.integer "first_category_id"
     t.integer "second_category_id"
     t.integer "third_category_id"
@@ -85,8 +85,8 @@ ActiveRecord::Schema.define(version: 2019_06_09_103253) do
     t.integer "prefecture_id"
     t.integer "delivery_date_id"
     t.integer "order_status_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "delivery_way_id"
   end
 
@@ -248,6 +248,9 @@ ActiveRecord::Schema.define(version: 2019_06_09_103253) do
     t.integer "prefecture_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "customer_id"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "sns_credentials", "users"
