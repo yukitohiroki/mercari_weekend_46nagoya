@@ -55,10 +55,15 @@ RSpec.describe ItemsController, type: :controller do
     end
 
     it "item_imageを生成する" do
-      # item_images = []
-      # item_images =FactoryBot.create_list(:item_image, 4)
-      expect(assigns(:item_image) ).to eq @item_image
-    end	
+      item_images = []
+      items = FactoryBot.create_list(:item, 4)
+      items.each do |item|
+        item_images.push(item.item_images)
+      end
+      get :index
+      binding.pry
+      expect(assigns(:item_images)).to match(item_images.count)
+    end
 
     context 'login' do
       it "正しいビューに変遷する" do
@@ -70,6 +75,19 @@ RSpec.describe ItemsController, type: :controller do
       it '正しいビューに変遷する' do
         redirect_to new_user_session_path
       end
+    end
+  end
+
+  describe 'POST#pay' do
+    before do
+      allow(Payjp::Charge).to receive(:create).and_return(PayjpMock.prepare_valid_charge)
+    end
+
+    it 'stubbing charge creation' do
+
+      payjp_stub(:charges, :create, params: { amount: 3500, customer: 'cus_fe1beb3e434431c4c51c4b8137a4', currency: 'jpy' })
+
+      Payjp::Charge.create(amount: 3500, customer: 'cus_fe1beb3e434431c4c51c4b8137a4', currency: 'jpy')
     end
   end
 end
