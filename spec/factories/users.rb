@@ -1,10 +1,11 @@
 FactoryBot.define do
   factory :user do
-    nickname                { Faker::Name.name }
-    first_name              { Faker::Name.first_name }
-    first_name_kana         { Faker::Name.name }
-    last_name               { Faker::Name.last_name }
-    last_name_kana          { Faker::Name.name }
+  	
+    nickname                { "aaaaa" }
+    first_name              { "yamada" }
+    first_name_kana         { "yamada" }
+    last_name               { "taro" }
+    last_name_kana          { "taro" }
     city                    { "city" }
     address                 { "address" }
     building                { "building" }
@@ -16,7 +17,7 @@ FactoryBot.define do
     birth_year              { "2000" }
     birth_month             { "1" }
     birth_day               { "1" }
-    point_amount            { "a" }
+    profit_amount            { "a" }
     user_icon               { "user_icon" }
     introduction            { "introduction" }
     remember_created_at     { "1" }
@@ -24,5 +25,6 @@ FactoryBot.define do
     password                { "111111" }
     password_confirmation   { "111111" }
     association :prefecture,           factory: :prefecture
+    
   end
 end
