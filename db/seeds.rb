@@ -65,6 +65,15 @@ CSV.foreach('db/point_statuses.csv', headers: true) do |row|
   )
 end
 
+CSV.foreach('db/points.csv', headers: true) do |row|
+  Point.create(
+    amount: row['amount'],
+    user_id: row['user_id'],
+    point_status_id: row['point_status_id'],
+    created_at: row['created_at'],
+    updated_at: row['updated_at']
+  )
+end
 
 CSV.foreach('db/prefectures.csv', headers: true) do |row|
   Prefecture.create(
