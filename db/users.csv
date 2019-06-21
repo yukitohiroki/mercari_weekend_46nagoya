@@ -1,3 +1,2 @@
 id,nickname,first_name,first_name_kana,last_name,last_name_kana,city,address,building,email,password,reset_password_token,telephone,zip_code,birth_year,birth_month,birth_day,point_id,profit_amount,user_icon,introduction,remember_created_at,reset_password_sent_at,prefecture_id,created_at,updated_at,customer_id
-1,えり,愛理,エリ,石濱,イシハマ,東海市加木屋町,木之下39番地,NULL,aaa@aaa,11111111,NULL,9029466341,4770032,1988,6,20,1,NULL,"",NULL,NULL,NULL,23,2019-05-21 23:45:41,2019-05-21 23:45:41,cus_b3a53d386aed342748500c8dc58f
-2,tanaka,貴久,タカヒサ,川口,カワグチ,名古屋市昭和区広見町,6-65,NULL,abc@abc,12345678,NULL,9012345678,4660046,1900,2,2,2,NULL,"",NULL,NULL,NULL,23,2019-06-17 04:15:56,2019-06-17 04:15:56,cus_b3a53d386aed342748500c8dc58f
+1,tanaka,貴久,タカヒサ,川口,カワグチ,名古屋市昭和区広見町,6-65,NULL,abc@abc,12345678,NULL,9012345678,4660046,1900,2,2,2,NULL,"",NULL,NULL,NULL,23,2019-06-17 04:15:56,2019-06-17 04:15:56,cus_b3a53d386aed342748500c8dc58f
