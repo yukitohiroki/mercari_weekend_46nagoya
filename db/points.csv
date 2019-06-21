@@ -1,2 +1,2 @@
-id,amount,user_id,point_status_id,"created_at","updated_at"
-1,300,1,1,"0000-00-00 00:00:00","0000-00-00 00:00:00"
+id,"amount",user_id,point_status_id,"created_at","updated_at"
+1,"300",1,1,"0000-00-00 00:00:00","0000-00-00 00:00:00"
