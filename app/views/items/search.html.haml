@@ -84,7 +84,8 @@
               = f.radio_button :order_status_id_eq, 2 
               売り切れ
         .left-side__box-submit
-          = f.submit "完了", class: :search_submit
+          = f.submit "リセット", type: :reset, class: :reset_button
+          = f.button "完了", class: :search_submit
       %end
           
 = render partial: "footer"
