@@ -53,5 +53,9 @@ FactoryBot.define do
       brand_id {6}
     end
 
+    after(:build) do |item|
+      item.item_images << build(:item_image, item: item)
+    end
+
   end
 end

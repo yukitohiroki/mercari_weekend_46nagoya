@@ -66,9 +66,7 @@ class ItemsController < ApplicationController
     @thirdcategory = ThirdCategory.where(second_category_id: params[:q][:second_category_id_eq])
   end
 
-
-
-    Payjp::api_key ='sk_test_c5be69e2d1ccf9815f894a2d'
+    Payjp::api_key ='sk_test_01fd21565272036e9153cfa6'
 
   def self.create_token(number, cvc, exp_year, exp_month)
   token = Payjp::Token.create(
@@ -83,14 +81,13 @@ class ItemsController < ApplicationController
   end
 
   def pay
-    Payjp.api_key = 'sk_test_c5be69e2d1ccf9815f894a2d'
+    Payjp.api_key = 'sk_test_01fd21565272036e9153cfa6'
     @user = current_user
     @item = Item.find(params[:id])
     @item.update_attribute(:order_status_id, 2 )
 
     if customer_id = @user.customer_id
       customer = Payjp::Customer.retrieve(id: customer_id)
-
       charge = Payjp::Charge.create(
         amount: params['price'],
         customer: customer,

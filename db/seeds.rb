@@ -57,6 +57,24 @@ CSV.foreach('db/order_statuses.csv', headers: true) do |row|
   )
 end
 
+CSV.foreach('db/point_statuses.csv', headers: true) do |row|
+  PointStatus.create(
+    point_status: row['point_status'],
+    created_at: row['created_at'],
+    updated_at: row['updated_at']
+  )
+end
+
+CSV.foreach('db/points.csv', headers: true) do |row|
+  Point.create(
+    amount: row['amount'],
+    user_id: row['user_id'],
+    point_status_id: row['point_status_id'],
+    created_at: row['created_at'],
+    updated_at: row['updated_at']
+  )
+end
+
 CSV.foreach('db/prefectures.csv', headers: true) do |row|
   Prefecture.create(
     prefecture: row['prefecture'],
@@ -92,3 +110,37 @@ CSV.foreach('db/third_categories.csv', headers: true) do |row|
     updated_at: row['updated_at']
   )
 end
+
+CSV.foreach('db/users.csv', headers: true) do |row|
+  user = User.new(
+    nickname: row['nickname'],
+    first_name: row['first_name'],
+    first_name_kana: row['first_name_kana'],
+    last_name: row['last_name'],
+    last_name_kana:   row['last_name_kana'],
+    city: row['city'],
+    address: row['address'],
+    building: row['building'],
+    email:   row['email'],
+    password: row['password'],
+    reset_password_token: row['reset_password_token'],
+    telephone: row['telephone'],
+    zip_code:   row['zip_code'],
+    birth_year: row['birth_year'],
+    birth_month: row['birth_month'],
+    birth_day: row['birth_day'],
+    point_id:   row['point_id'],
+    profit_amount: row['profit_amount'],
+    user_icon: row['user_icon'],
+    introduction: row['introduction'],
+    remember_created_at:   row['remember_created_at'],
+    reset_password_sent_at: row['reset_password_sent_at'],
+    prefecture_id: row['prefecture_id'],
+    created_at: row['created_at'],
+    updated_at: row['updated_at'],
+    customer_id: row['customer_id']
+  )
+  user.save!
+end
+
+
