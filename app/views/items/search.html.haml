@@ -1,7 +1,7 @@
 = render partial: "header"
 .breads
   - breadcrumb :item_search
-  = breadcrumbs separator: "#{content_tag(:i, '', :class=>'fa fa-caret-right')}"
+  = breadcrumbs separator: "#{content_tag(:i, '', class:'fa fa-caret-right')}"
 .default-container_search
   .large-content
     .large-content__search-result__head
@@ -39,7 +39,7 @@
           = f.label :商品の状態
           .left-side__box-correction
             .correction-list
-              = f.radio_button :condition_id_eq, '', {:checked => true} 
+              = f.radio_button :condition_id_eq, '', {checked: true} 
               すべて
             .correction-list
               = f.radio_button :condition_id_eq, 1 
@@ -63,7 +63,7 @@
           = f.label :配送料の負担
           .left-side__box-correction2
             .correction-list
-              = f.radio_button :delivery_charge_id_eq, '', {:checked => true} 
+              = f.radio_button :delivery_charge_id_eq, '', {checked: true} 
               すべて
             .correction-list
               = f.radio_button :delivery_charge_id_eq, 1 
@@ -75,7 +75,7 @@
           = f.label :販売状況
           .left-side__box-correction2
             .correction-list
-              = f.radio_button :order_status_id_eq, '', {:checked => true} 
+              = f.radio_button :order_status_id_eq, '', {checked: true} 
               すべて
             .correction-list
               = f.radio_button :order_status_id_eq, 1 
