@@ -84,7 +84,8 @@
               = f.radio_button :order_status_id_eq, 2 
               売り切れ
         .left-side__box-submit
-          = f.submit "リセット", type: :reset, class: :reset_button
+          = link_to 'リセット', request.path, class: :reset_button
+          -# = f.submit "リセット", type: :input, class: :reset_button, request.path
           = f.submit "完了", class: :search_submit
         %end
           
