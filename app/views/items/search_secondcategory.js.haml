@@ -1,0 +1,3 @@
+$('#search_second-select').html(
+"#{j(select :q, :second_category_id_eq, options_from_collection_for_select(@secondcategory, :id, :second_category),{prompt: '---'}, {data: {remote: true, url: url_for(action: :search_thirdcategory)}})}"
+);

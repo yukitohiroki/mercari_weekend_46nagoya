@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
 
   before_action :authenticate_user!, except: [:index,:show]
   before_action :set_item, only: [:show, :edit, :update, :destroy, :order_confirm]
-  before_action :set_Category, only: [:new, :create, :edit, :update]
+  before_action :set_Category, only: [:new, :create, :edit, :update, :search]
 
   def index
     @items = Item.includes(:item_images).limit(4).order("created_at DESC")
@@ -58,6 +58,14 @@ class ItemsController < ApplicationController
     @thirdcategory = ThirdCategory.where(second_category_id: params[:item][:second_category_id])
   end
 
+  def search_secondcategory
+    @secondcategory = SecondCategory.where(first_category_id: params[:q][:first_category_id_eq])
+  end
+
+  def search_thirdcategory
+    @thirdcategory = ThirdCategory.where(second_category_id: params[:q][:second_category_id_eq])
+  end
+
     Payjp::api_key ='sk_test_01fd21565272036e9153cfa6'
 
   def self.create_token(number, cvc, exp_year, exp_month)
@@ -101,6 +109,9 @@ class ItemsController < ApplicationController
 
   def order_confirm
     @item_images = @item.item_images
+  end
+
+  def search
   end
 
   private

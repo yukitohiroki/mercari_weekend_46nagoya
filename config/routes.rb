@@ -28,13 +28,14 @@ Rails.application.routes.draw do
 
   match 'secondcategory', to: 'items#secondcategory', via: [:get, :post]
   match 'thirdcategory', to: 'items#thirdcategory', via: [:get, :post]
-
+  match 'search_secondcategory', to: 'items#search_secondcategory', via: [:get, :post]
+  match 'search_thirdcategory', to: 'items#search_thirdcategory', via: [:get, :post]
   resources :categorys
-  get "logout" => 'users#logout'
-  get "users-form" => 'users#index'
-  get "order_confirm/:id" => 'items#order_confirm', as: 'order_confirm'
-  get "users/user_info/:id" => 'users#user_info', as: 'users_user_info'
-  get "users/user_exhibitation_products/:id" => 'users#user_exhibitation_products', as: 'user_exhibitation_products'
-  get "users/user_item_show/:id" => 'users#user_item_show', as: 'user_item_show'
-
+  get "logout", to: 'users#logout'
+  get "users-form", to: 'users#index'
+  get "search", to: 'items#search', as: 'search'
+  get "order_confirm/:id", to: 'items#order_confirm', as: 'order_confirm'
+  get "users/user_info/:id", to: 'users#user_info', as: 'users_user_info'
+  get "users/user_exhibitation_products/:id", to: 'users#user_exhibitation_products', as: 'user_exhibitation_products'
+  get "users/user_item_show/:id", to: 'users#user_item_show', as: 'user_item_show'
 end
