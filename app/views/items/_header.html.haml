@@ -11,35 +11,53 @@
               %i.fa.fa-search
         %end
     .lists.clearfix
-      .lists__left.left-float
-        %ul
-          %li.left_btn
-            %h2
-              = link_to do
-                カテゴリーから探す
+      %ul.gnav
+        %li.left_btn
+          %h2
+          = link_to categorys_path do
+            カテゴリから検索
+            %ul
+              -FirstCategory.all.each do |firstcategory|
+                %li
+                  = link_to category_path(firstcategory.id), action: :show do
+                    #{firstcategory.first_category}
+                  %ul
+                    -SecondCategory.where(first_category_id: [firstcategory.id]).each do |secondcategory|
+                      %li
+                        = link_to secondcategorys_path(secondcategory.id) do 
+                          #{secondcategory.second_category}
+                        %ul
+                          -ThirdCategory.where(second_category_id: [secondcategory.id]).each do |thirdcategory|
+                            %li
+                              = link_to thirdcategorys_path(thirdcategory.id) do 
+                                #{thirdcategory.third_category}
+                          %end
+                    %end
+              %end
+
           %li.left_btn
             %h2
               = link_to do
                 ブランドから探す
-      .lists__right.right-float
-
-        -if user_signed_in?
-          %ul
-            %li.right_btn
-              = link_to "/users/#{current_user.id}",class: "right_btn" do
-                = image_tag("header-footer_images/member_photo.png", class: "member_photo left-float")
-                マイページ
-            %li.right_btn
-              = link_to class: "right_btn" do
-                %i.fa.fa-bell.icon
-                お知らせ
-            %li.right_btn
-              = link_to class: "right_btn" do
-                %i.fa.fa-check.icon
-                やることリスト
-        -else
-          %ul.right_btn--signed-out
-            %li.right_btn--login
-              =link_to "ログイン", new_user_session_path, class: 'top-login-btn'
-            %li.right_btn--signup
-              = link_to "新規会員登録", users_form_path,  class: 'top-signup-btn'
+          %li.left_btn
+          .lists__right.right-float
+            -if user_signed_in?
+              %ul
+                %li.right_btn
+                  = link_to "/users/#{current_user.id}",class: "right_btn" do
+                    = image_tag("header-footer_images/member_photo.png", class: "member_photo left-float")
+                    マイページ
+                %li.right_btn
+                  = link_to class: "right_btn" do
+                    %i.fa.fa-bell.icon
+                    お知らせ
+                %li.right_btn
+                  = link_to class: "right_btn" do
+                    %i.fa.fa-check.icon
+                    やることリスト
+            -else
+              %ul.right_btn--signed-out
+                %li.right_btn--login
+                  =link_to "ログイン", new_user_session_path, class: 'top-login-btn'
+                %li.right_btn--signup
+                  = link_to "新規会員登録", users_form_path,  class: 'top-signup-btn'
