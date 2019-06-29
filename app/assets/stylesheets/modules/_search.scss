@@ -125,7 +125,7 @@
     font-weight: bold;
     margin: 8px;
   }
-  #q_price_gteq, #q_price_lt{
+  #q_price_gteq, #q_price_lteq{
     width: 250px;
     height: 50px;
   }
@@ -169,19 +169,25 @@
 .left-side__box-submit{
   width: 248px;
   height: 75px;
-  display: inline;
   padding:10px;
+  display: flex;
   .reset_button{
     width: 120px;
+    line-height: 50px;
     height: 50px;
     background-color: gray;
     color: white;
+    margin: 5px;
+    text-align: center;
   }
   .search_submit{
     width: 120px;
     height: 50px;
     background-color: red;
     color: white;
-    margin:5px;
+    margin: 5px;
   }
+}
+#q_brand_id_eq,#q_size_id_eq{
+  background-color: white;
 }

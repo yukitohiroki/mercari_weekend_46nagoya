@@ -19,10 +19,10 @@
       = search_form_for @search, url: search_path do |f|
         .left-side__box
           = f.label :キーワード検索
-          = f.text_field :name_cont, placeholder:" 入力してください"
+          = f.text_field :name_cont, placeholder:"入力してください"
         .left-side__box
           = f.label :カテゴリー検索
-          = f.select :first_category_id_eq, options_from_collection_for_select( @first, :id, :first_category),{prompt: '選択してください'}, {data: {remote: true, url: url_for(action: :search_secondcategory)}}
+          = f.select :first_category_id_eq, options_from_collection_for_select( FirstCategory.all, :id, :first_category),{prompt: '選択してください'}, {data: {remote: true, url: url_for(action: :search_secondcategory)}}
           #search_second-select
           #search_third-select
         .left-side__box
@@ -34,12 +34,12 @@
         .left-side__box-price
           = f.label :価格
           = f.text_field :price_gteq, placeholder:"￥ Min〜"
-          = f.text_field :price_lt, placeholder:"￥ 〜Max"
+          = f.text_field :price_lteq, placeholder:"￥ 〜Max"
         .left-side__box-correct
           = f.label :商品の状態
           .left-side__box-correction
             .correction-list
-              = f.radio_button :condition_id_eq, '', {:checked => true} 
+              = f.radio_button :condition_id_eq, '', {checked: true} 
               すべて
             .correction-list
               = f.radio_button :condition_id_eq, 1 
@@ -63,7 +63,7 @@
           = f.label :配送料の負担
           .left-side__box-correction2
             .correction-list
-              = f.radio_button :delivery_charge_id_eq, '', {:checked => true} 
+              = f.radio_button :delivery_charge_id_eq, '', {checked: true} 
               すべて
             .correction-list
               = f.radio_button :delivery_charge_id_eq, 1 
@@ -75,7 +75,7 @@
           = f.label :販売状況
           .left-side__box-correction2
             .correction-list
-              = f.radio_button :order_status_id_eq, '', {:checked => true} 
+              = f.radio_button :order_status_id_eq, '', {checked: true} 
               すべて
             .correction-list
               = f.radio_button :order_status_id_eq, 1 
@@ -84,8 +84,9 @@
               = f.radio_button :order_status_id_eq, 2 
               売り切れ
         .left-side__box-submit
-          = f.submit "リセット", type: :reset, class: :reset_button
-          = f.button "完了", class: :search_submit
-      %end
+          = link_to 'リセット', request.path, class: :reset_button
+          -# = f.submit "リセット", type: :input, class: :reset_button, request.path
+          = f.submit "完了", class: :search_submit
+        %end
           
 = render partial: "footer"
