@@ -9,6 +9,7 @@ background-color: white;
 
 .right-float {
   float: right;
+  height: 43px;
 }
 .header-wrap {
   background-color: white;
@@ -19,7 +20,7 @@ header {
   width: 1020px;
   margin: 0 auto;
   .logo-and-search {
-    height: 36px;
+    height: 30px;
     margin: 0;
     padding: 0;
     &__logo {
