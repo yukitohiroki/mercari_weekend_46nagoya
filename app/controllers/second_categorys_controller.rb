@@ -1,4 +1,4 @@
-class SecondcategorysController < ApplicationController
+class SecondCategorysController < ApplicationController
 
   before_action :set_category, only: [:show]
 

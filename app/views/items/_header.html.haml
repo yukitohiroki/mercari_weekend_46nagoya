@@ -24,12 +24,12 @@
                   %ul
                     -SecondCategory.where(first_category_id: [firstcategory.id]).each do |secondcategory|
                       %li
-                        = link_to secondcategorys_path(secondcategory.id) do 
+                        = link_to second_category_path(secondcategory.id) do 
                           #{secondcategory.second_category}
                         %ul
                           -ThirdCategory.where(second_category_id: [secondcategory.id]).each do |thirdcategory|
                             %li
-                              = link_to thirdcategorys_path(thirdcategory.id) do 
+                              = link_to third_category_path(thirdcategory.id) do 
                                 #{thirdcategory.third_category}
                           %end
                     %end

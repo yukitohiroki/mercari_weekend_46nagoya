@@ -21,7 +21,7 @@
             %h4.secondcategory-name #{secondcategory.second_category}
             -ThirdCategory.where(second_category_id: [secondcategory.id]).each do |thirdcategory|
               .thirdcategory-name
-                = link_to thirdcategorys_path(thirdcategory.id),class: :t_name do
+                = link_to third_category_path(thirdcategory.id),class: :t_name do
                   #{thirdcategory.third_category}
             %end
           %end

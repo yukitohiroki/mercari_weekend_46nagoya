@@ -1,4 +1,4 @@
-class ThirdcategorysController < ApplicationController
+class ThirdCategorysController < ApplicationController
   before_action :set_category, only: [:show]
 
   def show
