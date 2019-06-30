@@ -201,37 +201,37 @@ ul.right_btn--signed-out{
   text-align: center;
   line-height: 32px;
   float:right;
-
-  li.right_btn--login{
+  
+  li.right_btn--signup{
     height:32px;
-    width:78px;
+    width:106px;
     background-color:#ea342d;
     border-radius: 3px;
     display: inline-block;
+    margin-right: 5px;
 
-    .top-login-btn{
+    .top-signup-btn{
     color:white;
     font-size: 14px;
     text-decoration: none;
     }
   }
-
-  li.right_btn--signup{
-    height:32px;
-    width:106px;
+  li.right_btn--login{
+    height:31px;
+    width:78px;
     border:solid;
     border-width:1px;
     border-color:#009ae7;
     border-radius: 5px;
     display: inline-block;
-    margin-left: 5px;
     float:right;
 
-    .top-signup-btn{
+    .top-login-btn{
     font-size: 14px;
     color:#009ae7;
     border-radius: 5px;
     text-decoration: none;
     }
   }
+
 }

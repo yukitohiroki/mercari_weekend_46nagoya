@@ -57,7 +57,7 @@
                     やることリスト
             -else
               %ul.right_btn--signed-out
-                %li.right_btn--login
-                  =link_to "ログイン", new_user_session_path, class: 'top-login-btn'
                 %li.right_btn--signup
                   = link_to "新規会員登録", users_form_path,  class: 'top-signup-btn'
+                %li.right_btn--login
+                  = link_to "ログイン", new_user_session_path, class: 'top-login-btn'
