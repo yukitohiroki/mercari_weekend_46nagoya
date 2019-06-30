@@ -1,0 +1,98 @@
+.breads{
+  width: 100vw;
+  height: 50px;
+  position: relative;
+  border-top: solid $lightGray;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  background-color: white;
+  border-style: solid;
+  border-width: 1px 0 0 0 ;
+  font-family: 'Source Sans Pro', Helvetica, Arial, '游ゴシック体', 'YuGothic', 'メイリオ','Meiryo', sans-serif;
+  color: black;
+}
+.category-index{
+  width: 700px;
+  height: 32500px;
+  margin: 40px auto;
+
+  .visible-pc{
+    display: block;
+  }
+  .gray{
+    height: 50px;
+    font-size: 22px;
+    line-height: 1.4;
+    font-weight: bold;
+  }
+  .category-list-nav{
+    width: 700px;
+    height: 280px;
+  }
+  .first-category-name{
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    border-radius: 4px;
+    height: 40px;
+    padding: 0 30px;
+    margin: 5px;
+    font-size: 12px;
+    line-height: 40px;
+    background-color: white;
+    text-align: center;
+    font-weight: bold;
+  }
+  .first-category-name:hover{
+    background-color: red;
+  }
+  .f_name:hover{
+    color: white;
+  }
+  .category-list-box{
+    width: 700px;
+    height: 2700px;
+    margin: 30px auto;
+    .red_category{
+      height: 40px;
+      line-height: 40px;
+      display: block;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      padding: 0 30px;
+      height: 40px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      background-color: #ea352d;
+    }
+    .category-box{
+      background-color: white;
+      margin-bottom: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      .secondcategory-name{
+        width: 640px;
+        height: 14px;
+        padding: 30px 30px 10px;
+        font-weight: bold;
+        float: left;
+      }
+      .thirdcategory-name{
+        width: 230px;
+        font-size: 14px;
+        margin: 20px 0px;
+        text-align: center;
+        float: left;
+        color: #0099e8;
+        cursor: pointer;
+        text-decoration: none;
+      }
+      .t_name{
+        color: #0099e8;
+      }
+      .t_name:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+}

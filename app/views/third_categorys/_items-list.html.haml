@@ -1,0 +1,22 @@
+.bread-crumbs
+.breads
+  - breadcrumb :item_category
+  = breadcrumbs separator: "#{content_tag(:i, '', class: 'fa fa-caret-right')}"
+.list-container
+  .full-width
+    %ul.parts-nav.clearfix
+    %section.items-box-container.clearfix
+      %h1.items-box-head
+        #{@third_category.third_category}の商品一覧
+      .items-box-content.clearfix
+        - @items.where(third_category_id: @third_category.id).each do |item|
+          = render partial: 'categorys/item-box', locals: {item:item}
+        %end
+    .pager
+      = paginate @items
+    .under-decoration
+      .text-red
+        #{@third_category.third_category}
+      .text-white
+        %p
+          メルカリなら豊富な商品の中から欲しかった商品が見つかるかも！？

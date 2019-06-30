@@ -3,16 +3,16 @@
     - @item_images.each do |image|
       - if image.image.present?
         - if image.item_id == item.id
-          = image_tag image.image
+          = image_tag"#{item.item_images[0]&.image}", alt: ""
     .item-box-text
       .text-box
         %h4
           = item.name
       .price
-        = converting_price(item.price)
+        = number_to_currency(item.price, format:"%u%n", unit: "￥", strip_insignificant_zeros: true)
       .price-tax
         (税込)
-      -# .nice
-      -#   %i.fa.fa-heart
-      -#   %span
-      -#     1
+      .nice
+        %i.fa.fa-heart
+        %span
+          1

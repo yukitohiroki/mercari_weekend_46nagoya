@@ -31,6 +31,8 @@ Rails.application.routes.draw do
   match 'search_secondcategory', to: 'items#search_secondcategory', via: [:get, :post]
   match 'search_thirdcategory', to: 'items#search_thirdcategory', via: [:get, :post]
   resources :categorys
+  resources :second_categorys, only: [:show]
+  resources :third_categorys, only: [:show]
   get "logout", to: 'users#logout'
   get "users-form", to: 'users#index'
   get "search", to: 'items#search', as: 'search'

@@ -21,6 +21,10 @@ crumb :item_search do
   link '商品検索', search_path
 end
 
+crumb :item_category do
+  link 'カテゴリー検索', categorys_path
+end
+
 #以下マイページ関連
 crumb :mypage do
   link "マイページ", user_path(current_user.id)

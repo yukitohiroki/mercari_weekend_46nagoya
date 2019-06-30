@@ -97,7 +97,8 @@
             .text
               %h3 #{item.name}
               .price-box
-                .price= number_to_currency(item.price, unit: "￥", strip_insignificant_zeros: true)
+                .price
+                  = number_to_currency(@item.price, format:"%u%n", unit: "￥", strip_insignificant_zeros: true)
                 = fa_icon "heart"
                 %span
                   #{item.likes.count}
@@ -115,8 +116,9 @@
             .text
               %h3 #{item.name}
               .price-box
-                .price= number_to_currency(item.price, unit: "￥", strip_insignificant_zeros: true)
-                = fa_icon "heart"
+                .price
+                  = number_to_currency(@item.price, format:"%u%n", unit: "￥", strip_insignificant_zeros: true)
+                = fa_icon "heart", class: :heart
                 %span
                   #{item.likes.count}
                 %p （税込）
