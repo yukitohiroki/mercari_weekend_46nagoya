@@ -1,3 +1,16 @@
+.breads{
+  width: 100vw;
+  height: 50px;
+  position: relative;
+  border-top: solid $lightGray;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  background-color: white;
+  border-style: solid;
+  border-width: 1px 0 0 0 ;
+  font-family: 'Source Sans Pro', Helvetica, Arial, '游ゴシック体', 'YuGothic', 'メイリオ','Meiryo', sans-serif;
+  color: black;
+}
+
 .list-container {
   background-color: #f5f5f5;
   padding-bottom: 15px;

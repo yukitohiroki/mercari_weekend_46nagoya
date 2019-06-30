@@ -1,0 +1,92 @@
+= render partial: "header"
+.breads
+  - breadcrumb :item_search
+  = breadcrumbs separator: "#{content_tag(:i, '', class: 'fa fa-caret-right')}"
+.default-container_search
+  .large-content
+    .large-content__search-result__head
+      %h2
+      検索結果
+    .large-content__search-result__number
+      #{@search_items.count}件表示
+    .large-content__search-result__item
+      - @search_items.each do |item|
+        = render partial: 'items/search_item-box', locals: {item:item}
+      %end
+  .left-side
+    .left-side_title 詳細検索
+    .left-side_search
+      = search_form_for @search, url: search_path do |f|
+        .left-side__box
+          = f.label :キーワード検索
+          = f.text_field :name_cont, placeholder:"入力してください"
+        .left-side__box
+          = f.label :カテゴリー検索
+          = f.select :first_category_id_eq, options_from_collection_for_select( FirstCategory.all, :id, :first_category),{prompt: '選択してください'}, {data: {remote: true, url: url_for(action: :search_secondcategory)}}
+          #search_second-select
+          #search_third-select
+        .left-side__box
+          = f.label :ブランド検索
+          = f.collection_select :brand_id_eq, Brand.all, :id, :brand,{prompt: '選択してください'}
+        .left-side__box
+          = f.label :サイズ指定
+          = f.collection_select :size_id_eq, Size.all, :id, :size,{prompt: '選択してください'}
+        .left-side__box-price
+          = f.label :価格
+          = f.text_field :price_gteq, placeholder:"￥ Min〜"
+          = f.text_field :price_lteq, placeholder:"￥ 〜Max"
+        .left-side__box-correct
+          = f.label :商品の状態
+          .left-side__box-correction
+            .correction-list
+              = f.radio_button :condition_id_eq, '', {checked: true} 
+              すべて
+            .correction-list
+              = f.radio_button :condition_id_eq, 1 
+              新品・未使用
+            .correction-list
+              = f.radio_button :condition_id_eq, 2 
+              未使用に近い
+            .correction-list
+              = f.radio_button :condition_id_eq, 3 
+              目立った傷や汚れなし
+            .correction-list
+              = f.radio_button :condition_id_eq, 4 
+              やや傷や汚れあり
+            .correction-list
+              = f.radio_button :condition_id_eq, 5 
+              傷やよごれあり
+            .correction-list
+              = f.radio_button :condition_id_eq, 6 
+              全体に状態が悪い
+        .left-side__box-correct2
+          = f.label :配送料の負担
+          .left-side__box-correction2
+            .correction-list
+              = f.radio_button :delivery_charge_id_eq, '', {checked: true} 
+              すべて
+            .correction-list
+              = f.radio_button :delivery_charge_id_eq, 1 
+              送料込み(出品者負担)
+            .correction-list
+              = f.radio_button :delivery_charge_id_eq, 2 
+              着払い(購入者負担)
+        .left-side__box-correct2
+          = f.label :販売状況
+          .left-side__box-correction2
+            .correction-list
+              = f.radio_button :order_status_id_eq, '', {checked: true} 
+              すべて
+            .correction-list
+              = f.radio_button :order_status_id_eq, 1 
+              販売中
+            .correction-list
+              = f.radio_button :order_status_id_eq, 2 
+              売り切れ
+        .left-side__box-submit
+          = link_to 'リセット', request.path, class: :reset_button
+          -# = f.submit "リセット", type: :input, class: :reset_button, request.path
+          = f.submit "完了", class: :search_submit
+        %end
+          
+= render partial: "footer"

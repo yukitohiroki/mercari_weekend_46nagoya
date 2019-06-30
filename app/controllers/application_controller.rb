@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :basic_auth, if: :production?
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_search
   protect_from_forgery with: :exception
 
   private
@@ -16,5 +17,10 @@ class ApplicationController < ActionController::Base
     authenticate_or_request_with_http_basic do |username, password|
       username == "mercari" && password == "2019"
     end
+  end
+
+  def set_search
+    @search = Item.ransack(params[:q]) #ransackメソッド推奨
+    @search_items = @search.result.page(params[:page])
   end
 end

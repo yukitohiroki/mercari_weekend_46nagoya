@@ -1,0 +1,31 @@
+= render partial: "items/header"
+.bread-crumbs
+.breads
+  - breadcrumb :item_category
+  = breadcrumbs separator: "#{content_tag(:i, '', class: 'fa fa-caret-right')}"
+.category-index
+  .visible-pc
+    %h2.gray カテゴリー一覧
+    .category-list-nav
+      -FirstCategory.all.each do |firstcategory|
+        .first-category-name
+          %a{href: "##{firstcategory.first_category}", class: :f_name} #{firstcategory.first_category}
+      %end
+
+    .category-list-box
+      -FirstCategory.all.each do |firstcategory|
+        %a{id: "#{firstcategory.first_category}", class: :red_category}
+          #{firstcategory.first_category}
+        .category-box
+          -SecondCategory.where(first_category_id: [firstcategory.id]).each do |secondcategory|
+            %h4.secondcategory-name #{secondcategory.second_category}
+            -ThirdCategory.where(second_category_id: [secondcategory.id]).each do |thirdcategory|
+              .thirdcategory-name
+                = link_to third_category_path(thirdcategory.id),class: :t_name do
+                  #{thirdcategory.third_category}
+            %end
+          %end
+      %end
+
+= render partial: "items/footer"
+

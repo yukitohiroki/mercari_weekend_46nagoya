@@ -9,6 +9,7 @@ background-color: white;
 
 .right-float {
   float: right;
+  height: 43px;
 }
 .header-wrap {
   background-color: white;
@@ -19,7 +20,7 @@ header {
   width: 1020px;
   margin: 0 auto;
   .logo-and-search {
-    height: 36px;
+    height: 30px;
     margin: 0;
     padding: 0;
     &__logo {
@@ -129,7 +130,7 @@ header {
         width: 32px;
         }
       }
-        .right_btn {
+        li.right_btn {
           position: relative;
           display: inline-block;
           font-size: 14px;
@@ -147,4 +148,39 @@ header {
     }
   }
 }
+}
+.gnav {
+  display: flex;
+  height: 2rem;
+  margin: 0 auto;
+  width: 1000px;
+  z-index: 100;
+}
+.gnav > li {/*親階層のみ幅を25%にする*/
+  width: 21%;
+}
+/*全てのリスト・リンク共通*/
+.gnav li {
+  list-style: none;
+  position: relative;
+  z-index: 100;
+}
+
+.gnav li li {
+  height: 0;
+  overflow: hidden;
+  transition: .5s;
+}
+.gnav li li a {
+  background-color: white;
+}
+.gnav li:hover > ul > li {
+  height: 2rem;
+  overflow: visible;
+}
+.gnav li ul li ul {
+  left: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
