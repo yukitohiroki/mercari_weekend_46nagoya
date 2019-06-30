@@ -62,7 +62,9 @@ header {
     margin: 9px 0 0 0;
     &__left {
       ul{
-        .left_btn {
+        position: relative;
+        li.left_btn1 {
+          padding: 0 1.8em; /*リストデータの位置を調整*/
           display: inline-block;
           padding-right:16px;
           h2 {
@@ -77,6 +79,39 @@ header {
               }
             }
           }
+        }
+        li.left_btn1:before {
+          font-family: Material Icons; /*Material Iconsの使用を定義*/
+          content: "list"; /*使用するアイコンのUnicode*/
+          position: absolute;
+          left: -0.05em; /*アイコンの位置を調整*/
+          color: red; /*アイコンの色*/
+          font-size: 25px;
+        }
+        li.left_btn2 {
+          padding: 0 1.6em; /*リストデータの位置を調整*/
+          display: inline-block;
+          padding-right:16px;
+          h2 {
+            font-size: 14px;
+            font-weight: 400;
+            a {
+              display: block;
+              color: #333;
+              text-decoration: none;
+              &:hover {
+                color: #0099E8;
+              }
+            }
+          }
+        }
+        li.left_btn2:before {
+          font-family: Material Icons; /*Material Iconsの使用を定義*/
+          content: "input"; /*使用するアイコンのUnicode*/
+          position: absolute;
+          left: 8.5em; /*アイコンの位置を調整*/
+          color: red; /*アイコンの色*/
+          font-size: 20px;
         }
       }
     }

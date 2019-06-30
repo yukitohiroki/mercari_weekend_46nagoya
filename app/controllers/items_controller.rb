@@ -11,6 +11,7 @@ class ItemsController < ApplicationController
   def show
     @item_images = @item.item_images.where(item_id: @item.id)
     @user = current_user
+    @message = Communication.new
   end
 
   def new

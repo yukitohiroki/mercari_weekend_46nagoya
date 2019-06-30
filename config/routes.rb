@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   root 'items#index'
 
   resources :items do
+    resources :communications,only:[:create]
     member do
       post 'pay'
     end
@@ -16,13 +17,6 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update] do
     resources :payment_informations, only: [:index, :new, :create, :destroy]
   end
-
-  # resources :users, only: %i(index show) do
-  #   collection do
-  #     get :logout
-  #   end
-  # end
-
 
   resources :orders, only: [:show, :create]
 

@@ -6,6 +6,7 @@ class Item < ApplicationRecord
   has_many :message_users,through: :messages,source: :user
   has_many :like_users,through: :likes,source: :user
   has_many :flag_users,through: :flags,source: :user
+  has_many :communications
 
   belongs_to :order, optional: true
   belongs_to :profit, optional: true
@@ -22,4 +23,5 @@ class Item < ApplicationRecord
   belongs_to :order_status, optional: true
   belongs_to :size, optional: true
   accepts_nested_attributes_for :item_images
+
 end
