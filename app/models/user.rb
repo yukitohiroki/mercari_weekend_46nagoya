@@ -98,4 +98,8 @@ class User < ApplicationRecord
     # hashでsnsのidを返り値として保持しておく
     return { user: user , sns_id: sns.id }
   end
+
+  def already_liked?(item)
+    self.likes.exists?(item_id: item.id)
+  end
 end
