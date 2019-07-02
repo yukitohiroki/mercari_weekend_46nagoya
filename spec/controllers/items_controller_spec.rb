@@ -181,4 +181,36 @@ RSpec.describe ItemsController, type: :controller do
       Payjp::Charge.create(amount: 3500, customer: 'cus_fe1beb3e434431c4c51c4b8137a4', currency: 'jpy')
     end
   end
+  
+  
+  describe 'GET #search' do
+    let(:user) { create(:user) }
+    
+    before do
+      login(user)
+      get :search
+    end
+    
+    it "正しいビューを表示する" do
+      expect(response).to render_template :search
+    end
+  end
+
+  describe 'GET #search_secondcategory, #search_thirdcategory' do
+
+    before do
+      @second_item = FactoryBot.create(:ledies_item)
+      @third_item = FactoryBot.create(:tops_item)
+      get :search, params: {id: @item}
+    end
+
+    it "@secondcategoryが期待される配列を持つ" do
+      ledies_category = FactoryBot.create(:ledies_category)
+      expect(@second_item.first_category_id).to eq(ledies_category.first_category_id)
+    end
+    it "@thirdcategoryが期待される配列を持つ" do
+      tops_category = FactoryBot.create(:tops_category)
+      expect(@third_item.second_category_id).to eq(tops_category.second_category_id)
+    end
+  end
 end
