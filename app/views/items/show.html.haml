@@ -73,19 +73,20 @@
     .item-container__discription
       %p
       \#{@item.description}
-    - if current_user.already_liked?(@item)
-      .like-function__red
-        %i.fas.fa-heart.faa-pulse.animated
-        = link_to 'いいね！', item_like_path(@item), class: :like_button, method: :delete
-        %span
-          #{@item.likes.count}
-    - else
-      .like-function
-        =  fa_icon "heart"
-        = link_to 'いいね！', item_likes_path(@item) ,class: :like_button, method: :post
-        %span
-          #{@item.likes.count}
-    %end
+    -if user_signed_in?
+      - if current_user.already_liked?(@item)
+        .like-function__red
+          %i.fas.fa-heart.faa-pulse.animated
+          = link_to 'いいね！', item_like_path(@item), class: :like_button, method: :delete
+          %span
+            #{@item.likes.count}
+      - else
+        .like-function
+          =  fa_icon "heart"
+          = link_to 'いいね！', item_likes_path(@item) ,class: :like_button, method: :post
+          %span
+            #{@item.likes.count}
+      %end
 
   - if user_signed_in?
     .comment
