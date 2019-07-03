@@ -12,6 +12,7 @@ class ItemsController < ApplicationController
     @item_images = @item.item_images.where(item_id: @item.id)
     @user = current_user
     @message = Communication.new
+    @like = Like.new
   end
 
   def new

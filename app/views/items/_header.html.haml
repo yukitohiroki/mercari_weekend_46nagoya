@@ -12,7 +12,7 @@
         %end
     .lists.clearfix
       %ul.gnav
-        %li.left_btn
+        %li.left_btn1
           %h2
           = link_to categorys_path do
             カテゴリから検索
@@ -35,29 +35,31 @@
                     %end
               %end
 
-          %li.left_btn
+          %li.left_btn2
             %h2
               = link_to do
                 ブランドから探す
           %li.left_btn
-          .lists__right.right-float
-            -if user_signed_in?
-              %ul
-                %li.right_btn
-                  = link_to user_path(current_user),class: "right_btn" do
-                    = image_tag("header-footer_images/member_photo.png", class: "member_photo left-float")
-                    マイページ
-                %li.right_btn
-                  = link_to class: "right_btn" do
-                    %i.fa.fa-bell.icon
-                    お知らせ
-                %li.right_btn
-                  = link_to class: "right_btn" do
-                    %i.fa.fa-check.icon
-                    やることリスト
-            -else
+        .lists__right.right-float
+          -if user_signed_in?
+            %ul
+              %li.right_btn
+                = link_to user_path(current_user),class: "right_btn" do
+                  = image_tag("header-footer_images/member_photo.png", class: "member_photo left-float")
+                  マイページ
+              %li.right_btn
+                = link_to class: "right_btn" do
+                  %i.fa.fa-bell.icon
+                  お知らせ
+              %li.right_btn
+                = link_to class: "right_btn" do
+                  %i.fa.fa-check.icon
+                  やることリスト
+          -else
+            %ul
               %ul.right_btn--signed-out
                 %li.right_btn--signup
                   = link_to "新規会員登録", users_form_path,  class: 'top-signup-btn'
                 %li.right_btn--login
                   = link_to "ログイン", new_user_session_path, class: 'top-login-btn'
+              %ul.right_btn--signed-out
