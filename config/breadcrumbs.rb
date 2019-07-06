@@ -3,26 +3,36 @@ crumb :root do
 end
 
 crumb :item_show do |item|
-  link item.name, item
+  link item.name
   parent :root
 end
 
-crumb :categories do
-  link 'カテゴリー一覧', root_path
-  parent :root
+crumb :item_search_firstcategory do |second|
+  first = FirstCategory.find(params[:id])
+  link first.first_category
+  parent :item_search_category
 end
 
-crumb :category do
-  link 'カテゴリー', categorys_path
-  parent :categories
+crumb :item_search_secondcategory do |second|
+  second = SecondCategory.find(params[:id])
+  link second.second_category
+  parent :item_search_category
+end
+
+crumb :item_search_thirdcategory do |third|
+  third = ThirdCategory.find(params[:id])
+  link third.third_category
+  parent :item_search_category
 end
 
 crumb :item_search do
   link '商品検索', search_path
+  parent :root
 end
 
-crumb :item_category do
+crumb :item_search_category do
   link 'カテゴリー検索', categorys_path
+  parent :root
 end
 
 #以下マイページ関連
