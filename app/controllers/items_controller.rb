@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
   before_action :authenticate_user!, except: [:index,:show]
-  before_action :set_item, only: [:show, :edit, :update, :destroy, :order_confirm]
+  before_action :set_item, only: [:show, :edit, :update, :destroy, :order_confirm, :order_status]
   before_action :set_Category, only: [:new, :create, :edit, :update, :search]
 
   def index
@@ -115,6 +115,18 @@ class ItemsController < ApplicationController
 
   def search
   end
+
+  def order_status
+
+    if @item.order_status.id == 1
+      @item.update(order_status_id: 3)
+    else @item.order_status.id == 3
+      @item.update(order_status_id: 1)
+    end
+
+    redirect_back(fallback_location: root_path)
+  end
+
 
   private
 

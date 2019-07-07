@@ -13,7 +13,6 @@ Rails.application.routes.draw do
       post 'pay'
     end
     resources :likes, only: [:create, :destroy]
-    resources :order_statuses, only: [:update]
   end
 
   resources :users, only: [:show, :edit, :update] do
@@ -26,6 +25,7 @@ Rails.application.routes.draw do
   match 'thirdcategory', to: 'items#thirdcategory', via: [:get, :post]
   match 'search_secondcategory', to: 'items#search_secondcategory', via: [:get, :post]
   match 'search_thirdcategory', to: 'items#search_thirdcategory', via: [:get, :post]
+  match 'order_status/:id', to: 'items#order_status', as: 'order_status', via: [:patch]
   resources :categorys
   resources :second_categorys, only: [:show]
   resources :third_categorys, only: [:show]
