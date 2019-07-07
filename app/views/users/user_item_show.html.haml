@@ -69,10 +69,10 @@
     %p 
       or
     - if @item.order_status.id == 1
-      = link_to item_order_status_path(@item), item_id: @item.id, class: "item-info-gray", method: :patch do
+      = link_to order_status_path(@item), class: "item-info-gray" do
         出品を停止する
     - else
-      = link_to item_order_status_path(@item), item_id: @item.id, class: "item-info-red", method: :patch do
+      = link_to order_status_path(@item), class: "item-info-red" do
         出品を再開する
         
     = link_to "この商品を削除する", item_path, method: :delete, data: { confirm: '確認削除すると二度と復活できません。削除する代わりに停止することもできます。本当に削除しますか？' }, class: "item-info-gray"
