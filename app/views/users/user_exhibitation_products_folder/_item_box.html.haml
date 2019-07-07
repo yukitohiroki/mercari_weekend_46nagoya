@@ -8,10 +8,14 @@
       .mypage-item-info
         %i.fa.fa-heart.icon
         .listing-item-count
-          0
+          #{item.likes.count}
         %i.fa.fa-comment-alt.icon
         .listing-item-count
-          0
-        .mypage-item-status
-          出品中
+          #{item.communications.count}
+        - if item.order_status.id == 1 
+          .mypage-item-status_blue
+            出品中
+        - if item.order_status.id == 3
+          .mypage-item-status_red
+            公開停止中
     %i.fa.fa-angle-right.icon

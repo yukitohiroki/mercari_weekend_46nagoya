@@ -58,8 +58,34 @@
           z-index: 2;
           font-size: 25px;
           color: white;
-          transform:rotate(-45deg);
-          transform:translate(-45px,-45px);
+          transform: translateX(-45px) translateY(-45px) rotate(-45deg);
+          position: absolute;
+          bottom: -45px;
+          right: -67px;
+        }
+      }
+      .sell-stop-box {
+        width: 0;
+        height: 0;
+        border-top: 50px solid gray;
+        border-right: 50px solid transparent;
+        border-bottom: 50px solid transparent;
+        border-left: 50px solid gray;
+        position: absolute;
+        display: block;
+        content: '';
+        top: 0;
+        left: 0;
+        z-index: 1;
+      
+        .sell-stop-text {
+          z-index: 2;
+          font-size: 25px;
+          color: white;
+          transform: translateX(-45px) translateY(-45px) rotate(-45deg);
+          position: absolute;
+          bottom: -45px;
+          right: -67px;
         }
       }
 

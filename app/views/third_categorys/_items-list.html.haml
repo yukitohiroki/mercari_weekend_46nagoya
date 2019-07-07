@@ -10,7 +10,8 @@
         #{@third_category.third_category}の商品一覧
       .items-box-content.clearfix
         - @items.where(third_category_id: @third_category.id).each do |item|
-          = render partial: 'categorys/item-box', locals: {item:item}
+          -if item.order_status_id != 3
+            = render partial: 'categorys/item-box', locals: {item:item}
         %end
     .pager
       = paginate @items

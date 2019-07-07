@@ -32,7 +32,8 @@
         レディース新着アイテム
     %ul
       - @items.where(first_category_id:1).each do |item|
-        = render partial: 'items/item-box', locals: {item:item}
+        -if item.order_status_id != 3
+          = render partial: 'items/item-box', locals: {item:item}
     .view-all
       =link_to do
         すべての商品を見る
@@ -42,7 +43,8 @@
         メンズ 新着アイテム
     %ul
       - @items.where(first_category_id:2).each do |item|
-        = render partial: 'items/item-box', locals: {item:item}
+        -if item.order_status_id != 3
+          = render partial: 'items/item-box', locals: {item:item}
     .view-all
       =link_to do
         すべての商品を見る
@@ -52,7 +54,8 @@
         ベビー・キッズ 新着アイテム
     %ul
       - @items.where(first_category_id:3).each do |item|
-        = render partial: 'items/item-box', locals: {item:item}
+        -if item.order_status_id != 3
+          = render partial: 'items/item-box', locals: {item:item}
     .view-all
       =link_to do
         すべての商品を見る
@@ -62,7 +65,8 @@
         インテリア・住まい・小物 新着アイテム
     %ul
       - @items.where(first_category_id:4).each do |item|
-        = render partial: 'items/item-box', locals: {item:item}
+        -if item.order_status_id != 3
+          = render partial: 'items/item-box', locals: {item:item}
     .view-all
       =link_to do
         すべての商品を見る
@@ -75,7 +79,8 @@
         NIKE 新着アイテム
     %ul
       - @items.where(brand_id:2).each do |item|
-        = render partial: 'items/item-box', locals: {item:item}
+        -if item.order_status_id != 3
+          = render partial: 'items/item-box', locals: {item:item}
     .view-all
       =link_to do
         すべての商品を見る
@@ -85,7 +90,8 @@
         adidas 新着アイテム
     %ul
       - @items.where(brand_id:3).each do |item|
-        = render partial: 'items/item-box', locals: {item:item}
+        -if item.order_status_id != 3
+          = render partial: 'items/item-box', locals: {item:item}
     .view-all
       =link_to do
         すべての商品を見る
@@ -95,7 +101,8 @@
         PUMA 新着アイテム
     %ul
       - @items.where(brand_id:4).each do |item|
-        = render partial: 'items/item-box', locals: {item:item}
+        -if item.order_status_id != 3
+          = render partial: 'items/item-box', locals: {item:item}
     .view-all
       =link_to do
         すべての商品を見る
@@ -105,7 +112,8 @@
         Reebok 新着アイテム
     %ul
       - @items.where(brand_id:5).each do |item|
-        = render partial: 'items/item-box', locals: {item:item}
+        -if item.order_status_id != 3
+          = render partial: 'items/item-box', locals: {item:item}
     .view-all
       =link_to do
         すべての商品を見る
@@ -115,7 +123,8 @@
         CONVERSE 新着アイテム
     %ul
       - @items.where(brand_id:6).each do |item|
-        = render partial: 'items/item-box', locals: {item:item}
+        -if item.order_status_id != 3
+          = render partial: 'items/item-box', locals: {item:item}
     .view-all
       =link_to do
         すべての商品を見る

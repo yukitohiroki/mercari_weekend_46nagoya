@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       post 'pay'
     end
     resources :likes, only: [:create, :destroy]
+    resources :order_statuses, only: [:update]
   end
 
   resources :users, only: [:show, :edit, :update] do

@@ -101,8 +101,17 @@
               float: left;
               line-height: 40px;
             }
-            .mypage-item-status {
+            .mypage-item-status_blue {
               background: #0099e8;
+              display: inline-block;
+              margin: 8px 0 0 0;
+              padding: 5px 6px;
+              border-radius: 2px;
+              font-size: 12px;
+              color: #fff;
+            }
+            .mypage-item-status_red {
+              background:red;
               display: inline-block;
               margin: 8px 0 0 0;
               padding: 5px 6px;
