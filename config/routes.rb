@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   resources :categorys
   resources :second_categorys, only: [:show]
   resources :third_categorys, only: [:show]
+  resources :brands, only: [:show]
   get "logout", to: 'users#logout'
   get "users-form", to: 'users#index'
   get "search", to: 'items#search', as: 'search'

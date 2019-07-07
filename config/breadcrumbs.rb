@@ -25,13 +25,19 @@ crumb :item_search_thirdcategory do |third|
   parent :item_search_category
 end
 
+crumb :item_search_brand do |brand|
+  brand = Brand.find(params[:id])
+  link brand.brand
+  parent :item_search_category
+end
+
 crumb :item_search do
   link '商品検索', search_path
   parent :root
 end
 
 crumb :item_search_category do
-  link 'カテゴリー検索', categorys_path
+  link 'カテゴリー検索・ブランド検索', categorys_path
   parent :root
 end
 

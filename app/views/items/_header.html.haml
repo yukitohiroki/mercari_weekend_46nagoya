@@ -34,12 +34,17 @@
                           %end
                     %end
               %end
-
-          %li.left_btn2
-            %h2
-              = link_to do
-                ブランドから探す
-          %li.left_btn
+        %li.left_btn2
+          %h2
+          = link_to do
+            ブランドから探す
+            %ul
+              -Brand.all.each do |brand|
+                %li
+                  = link_to brand_path(brand.id), action: :show do
+                    #{brand.brand}
+              %end
+        .space
         .lists__right.right-float
           -if user_signed_in?
             %ul
