@@ -1,27 +1,24 @@
 .default-container_search{
-  height: 2500px;
   width: 100vw;
   margin: 60px;
 }
 .large-content{
-  height: 630px;
   width: 900px;
   float: right;
-  &__search-result{
+  &__head{
     height: 30px;
-    &__head{
-      font-size: 22px;
-      font-weight: 600;
-      margin: 0 0 8px;
-    }
-    &__number{
-      margin: 16px 0;
-      font-size: 12px;
-      color: #888;
-    }
-    &__item{
-      height: 3480px;
-    }
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 0 8px;
+  }
+  &__number{
+    margin: 16px 0;
+    font-size: 12px;
+    color: #888;
+  }
+  &__item{
+    flex-wrap: wrap;
+    margin-bottom: 60px;
   }
 }
 
