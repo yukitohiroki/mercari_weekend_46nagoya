@@ -4,14 +4,15 @@
   = breadcrumbs separator: "#{content_tag(:i, '', class: 'fa fa-caret-right')}"
 .default-container_search
   .large-content
-    .large-content__search-result__head
+    .large-content__head
       %h2
       検索結果
-    .large-content__search-result__number
-      #{@search_items.count}件表示
-    .large-content__search-result__item
+    .large-content__number
+      #{@search_items.where.not(order_status_id: 3).count}件表示
+    .large-content__item
       - @search_items.each do |item|
-        = render partial: 'items/search_item-box', locals: {item:item}
+        -if item.order_status_id != 3
+          = render partial: 'items/search_item-box', locals: {item:item}
       %end
   .left-side
     .left-side_title 詳細検索

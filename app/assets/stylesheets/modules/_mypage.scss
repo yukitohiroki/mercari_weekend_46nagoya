@@ -177,15 +177,12 @@ body{
         }
       }
     }
-    #mypage-transaction-now-old{
-      margin: 40px 0;
-      .mypage-tab-head{
-        padding: 0 16px;
-        background-color: white;
-        font-size: 16px;
-        line-height: 72px;
-        font-weight: 600;
-      }
+    .mypage-tab-head{
+      padding: 0 16px;
+      background-color: white;
+      font-size: 16px;
+      line-height: 72px;
+      font-weight: 600;
     }
   }
   .left-side_box{
@@ -244,4 +241,11 @@ body{
 
 .not-active{
   display: none;
+}
+
+.large-content2{
+  float: right;
+  width: 700px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
 }

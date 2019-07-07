@@ -35,4 +35,5 @@ Rails.application.routes.draw do
   get "users/user_info/:id", to: 'users#user_info', as: 'users_user_info'
   get "users/user_exhibitation_products/:id", to: 'users#user_exhibitation_products', as: 'user_exhibitation_products'
   get "users/user_item_show/:id", to: 'users#user_item_show', as: 'user_item_show'
+  get "order_status/:id", to: 'items#order_status', as: 'order_status'
 end

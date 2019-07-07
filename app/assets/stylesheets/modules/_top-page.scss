@@ -156,8 +156,10 @@ button{
                 z-index: 2;
                 font-size: 25px;
                 color: white;
-                transform:rotate(-45deg);
-                transform:translate(-45px,-45px);
+                transform: translateX(-45px) translateY(-45px) rotate(-45deg);
+                position: absolute;
+                bottom: -45px;
+                right: -67px;
               }
             }
         a {
