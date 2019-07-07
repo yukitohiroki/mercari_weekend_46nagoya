@@ -1,0 +1,23 @@
+.bread-crumbs
+.breads
+  - breadcrumb :item_search_brand
+  = breadcrumbs separator: "#{content_tag(:i, '', class: 'fa fa-caret-right')}"
+.list-container
+  .full-width
+    %ul.parts-nav.clearfix
+    %section.items-box-container.clearfix
+      %h1.items-box-head
+        #{@brand.brand}の商品一覧
+      .items-box-content.clearfix
+        - @items.where(brand_id: @brand.id).each do |item|
+          -if item.order_status_id != 3
+            = render partial: 'categorys/item-box', locals: {item:item}
+          %end
+    .pager
+      = paginate @items
+    .under-decoration
+      .text-red
+        #{@brand.brand}
+      .text-white
+        %p
+          メルカリなら豊富な商品の中から欲しかった商品が見つかるかも！？
