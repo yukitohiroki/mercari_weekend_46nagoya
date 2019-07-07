@@ -118,9 +118,10 @@ class ItemsController < ApplicationController
 
   def order_status
 
+    # 出品停止と出品中の切り替え
     if @item.order_status.id == 1
       @item.update(order_status_id: 3)
-    else @item.order_status.id == 3
+    else
       @item.update(order_status_id: 1)
     end
 
