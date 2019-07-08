@@ -1,10 +1,11 @@
 .default-container_search{
-  width: 100vw;
-  margin: 60px;
+  margin: 80px 0 50px 80px;
+  hight: 1400px;
 }
 .large-content{
-  width: 900px;
+  width: 800px;
   float: right;
+  margin-bottom: 50px;
   &__head{
     height: 30px;
     font-size: 22px;
@@ -75,6 +76,7 @@
   height: 1500px;
   float: left;
   padding: 10px;
+  margin-bottom: 100px;
   background-color: white;
   .left-side_title{
     padding: 20px;
