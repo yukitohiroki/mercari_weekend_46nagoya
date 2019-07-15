@@ -260,13 +260,13 @@ ActiveRecord::Schema.define(version: 2019_07_12_132316) do
     t.datetime "updated_at", null: false
     t.string "customer_id"
     t.boolean "expert_or_ordinary"
-    t.text "company"
-    t.text "job"
-    t.text "position"
-    t.integer "work_year"
-    t.integer "first_category_id"
-    t.integer "second_category_id"
-    t.integer "third_category_id"
+    t.text "company", null: false
+    t.text "job", null: false
+    t.text "position", null: false
+    t.integer "work_year", null: false
+    t.integer "first_category_id", null: false
+    t.integer "second_category_id", null: false
+    t.integer "third_category_id", null: false
   end
 
   add_foreign_key "sns_credentials", "users"
