@@ -78,7 +78,7 @@
     .item-container__discription
       %p
       \#{@item.description}
-    .item-container__function
+    .item-container__function2
       -if user_signed_in?
         - if current_user.already_liked?(@item)
           .like-function__red
