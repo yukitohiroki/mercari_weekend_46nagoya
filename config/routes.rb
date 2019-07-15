@@ -5,6 +5,13 @@ Rails.application.routes.draw do
   sessions: 'users/sessions',
   omniauth_callbacks: "users/omniauth_callbacks"
   }
+  
+  devise_scope :user do
+    get 'expert_secondcategory' => 'users/registrations#expert_secondcategory'
+    get 'expert_thirdcategory'  => 'users/registrations#expert_thirdcategory'
+  end
+
+
   root 'items#index'
 
   resources :items do
@@ -13,6 +20,7 @@ Rails.application.routes.draw do
       post 'pay'
     end
     resources :likes, only: [:create, :destroy]
+    resources :flags, only: [:create, :destroy]
   end
 
   resources :users, only: [:show, :edit, :update] do

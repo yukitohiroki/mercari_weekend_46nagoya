@@ -100,6 +100,45 @@
               = f.select :birth_day,[*(1..31)],prompt:"選択してください"
             .birth
               日
+      .sign-up-main__form__field
+        = f.label :専門家登録
+        %br/
+        = f.check_box :expert_or_ordinary, id: :check_box, as: :boolean
+        = label_tag :expert_or_ordinary, "登録する", class: :expart_label, id: :expart
+      .sign-up-sub__info 専門家情報登録
+      %p.sign-up-sub__info 専門家登録するを選択された方は下記項目を入力してください。
+      .sign-up-main__form__field
+        = f.label :会社名
+        %span.form-require(style="background-color: blue;")
+          必須
+        %br/
+        = f.text_field :company ,placeholder: "入力してください"
+      .sign-up-main__form__field
+        = f.label :仕事内容
+        %span.form-require(style="background-color: blue;")
+          必須
+        %br/
+        = f.text_field :job ,placeholder: "入力してください"
+      .sign-up-main__form__field
+        = f.label :役職
+        %span.form-require(style="background-color: blue;")
+          必須
+        %br/
+        = f.text_field :position ,placeholder: "入力してください"
+      .sign-up-main__form__field
+        = f.label :年数
+        %span.form-require(style="background-color: blue;")
+          必須
+        %br/
+        = f.text_field :work_year ,placeholder: "入力してください"
+      .sign-up-main__form__field
+        = f.label :専門分野
+        %span.form-require(style="background-color: blue;")
+          必須
+        %br/
+        = f.select :first_category_id, options_from_collection_for_select( FirstCategory.all, :id, :first_category),{prompt: '---'}, {data: {remote: true, url: url_for(action: :expert_secondcategory)}}
+        #second-select
+        #third-select
       .g-recaptcha{"data-sitekey": "6LfeCKEUAAAAAHogdoz14qZbylP951edYGrtHNZM"}
       .submit-btn
         = f.submit "登録完了",class:"next-btn"

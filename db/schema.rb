@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_29_055822) do
+ActiveRecord::Schema.define(version: 2019_07_12_132316) do
 
   create_table "brand_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "brand_id"
@@ -259,6 +259,14 @@ ActiveRecord::Schema.define(version: 2019_06_29_055822) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "customer_id"
+    t.boolean "expert_or_ordinary"
+    t.text "company"
+    t.text "job"
+    t.text "position"
+    t.integer "work_year"
+    t.integer "first_category_id"
+    t.integer "second_category_id"
+    t.integer "third_category_id"
   end
 
   add_foreign_key "sns_credentials", "users"

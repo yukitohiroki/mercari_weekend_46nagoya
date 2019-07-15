@@ -23,6 +23,9 @@ class User < ApplicationRecord
 
   has_many   :payment_information, dependent: :destroy
   belongs_to :prefecture, optional: true
+  belongs_to :first_category, optional: true
+  belongs_to :second_category, optional: true
+  belongs_to :third_category, optional: true
 
   # def self.find_oauth(auth)
   #   uid = auth.uid

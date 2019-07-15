@@ -14,11 +14,12 @@
     height: 100%;
     width: 670px;
     margin: 40px auto 0;
-    padding: 24px 15px 40px 15px;
+    padding: 10px 15px 40px 15px;
 
     h1 {
-      font-size: 20px;
+      font-size: 25px;
       text-align: center;
+      margin: 15px;
       margin-bottom: 20px;
     }
 
@@ -199,6 +200,12 @@
       word-break: break-all;
 
     }
+    &__function {
+      margin: 0 270px 0 270px;
+      font-size: 18px;
+      height: 20px;
+      display: flex;
+    }
   }
 
   .comment {
@@ -276,7 +283,7 @@
         height: 100px;
       }
       .send {
-        background-color: #A9A9A9;
+        background-color: red;
         color: white;
         margin-top: 5px;
         font-size: 20px;
@@ -445,5 +452,18 @@
   }
   span{
     display:table-cell;
+  }
+}
+
+.expart-function__blue{
+  margin: 0px 0px;
+  width: 160px;
+  height: 30px;
+  .expart_button{
+    padding: 5px;
+    text-align: center;
+    background-color: #0c40a1;
+    color: white;
+    border: 1px solid lightgray;
   }
 }
