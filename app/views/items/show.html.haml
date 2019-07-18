@@ -4,6 +4,11 @@
   = breadcrumbs separator: "#{content_tag(:i, '', class: 'fa fa-caret-right')}"
 .default-container
   %section.item-container
+    - @item.communications.each do |communication|
+      - if  communication.user.expert_or_ordinary == true  &&  communication.user.third_category_id == @item.third_category_id
+        .item-container__function
+          .expart-function__blue
+            .expart_button 専門家認定品
     %h1 #{@item.name}
     .item-container__main-content
     .item-container__image
@@ -73,20 +78,20 @@
     .item-container__discription
       %p
       \#{@item.description}
-    -if user_signed_in?
-      - if current_user.already_liked?(@item)
-        .like-function__red
-          %i.fas.fa-heart.faa-pulse.animated
-          = link_to 'いいね！', item_like_path(@item), class: :like_button, method: :delete
-          %span
-            #{@item.likes.count}
-      - else
-        .like-function
-          =  fa_icon "heart"
-          = link_to 'いいね！', item_likes_path(@item) ,class: :like_button, method: :post
-          %span
-            #{@item.likes.count}
-      %end
+    .item-container__function2
+      -if user_signed_in?
+        - if current_user.already_liked?(@item)
+          .like-function__red
+            %i.fas.fa-heart.faa-pulse.animated
+            = link_to 'いいね！', item_like_path(@item), class: :like_button, method: :delete
+            %span
+              #{@item.likes.count}
+        - else
+          .like-function
+            =  fa_icon "heart"
+            = link_to 'いいね！', item_likes_path(@item) ,class: :like_button, method: :post
+            %span
+              #{@item.likes.count}
 
   - if user_signed_in?
     .comment
@@ -99,9 +104,13 @@
               - else
                 = image_tag "header-footer_images/member_photo.png"
                 %br
-                - if communication.seller_or_buyer == true
+                - if  communication.user.expert_or_ordinary == true  &&  communication.user.third_category_id == @item.third_category_id
+                  %p(style="color: blue;")
+                    専門家
+                - elsif communication.seller_or_buyer == true && communication.item_id == @item.id
                   %p
                     出品者
+                - else
             .comment__box__communication__message
               .comment__box__communication__message__name
                 = communication.user.nickname
@@ -155,7 +164,7 @@
               %h3 #{item.name}
               .price-box
                 .price
-                  = number_to_currency(@item.price, format:"%u%n", unit: "￥", strip_insignificant_zeros: true)
+                  = number_to_currency(item.price, format:"%u%n", unit: "￥", strip_insignificant_zeros: true)
                 = fa_icon "heart", class: :heart
                 %span
                   #{item.likes.count}

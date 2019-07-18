@@ -24,13 +24,14 @@
     border: 1px solid #ccc;
     padding:10px 0 8px 0;
     font-size: 16px;
+    color: black;
   }
-
-    select {
+    select{
       border: none;
       background-color: white;
       width:100%;
       height:30px;
+      color: black;
     }
     input[type="text"] {
       width: 304px;
@@ -78,13 +79,6 @@
         margin-right: 3px;
 
       }
-      .birth--select{
-        height:40px;
-        width:140px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-        padding-top: 10px;
-      }
       .birth{
         position: absolute;
         right:0;
@@ -104,10 +98,9 @@
     border-width:1px;
   }
   &__form{
-    min-height:1750px;
-    height:auto;
+    height:2600px;
     background-color: white;
-    padding:64px 0 10px 0;
+    padding:64px 0 50px 0;
     margin-bottom: 1px;
 
     &__field--top{
@@ -126,6 +119,10 @@
       margin-top: 40px;
       font-weight: 600;
       font-size:14px;
+      label#expart.expart_label{
+        font-size: 20px;
+        font-weight: normal;
+      }
     }
     &__field--name{
       height:70px;
@@ -146,7 +143,7 @@
       margin: 0 auto;
     }
     .g-recaptcha{
-      margin: 50px 190px;
+      margin: 160px 205px 40px 190px;
     }
     #error_explanation{
       text-align: center;
@@ -233,5 +230,34 @@ ul.right_btn--signed-out{
     text-decoration: none;
     }
   }
+}
 
+.sign-up-sub__info{
+  height: 30px;
+  text-align: center;
+  line-height: 60px;
+  font-size: 22px;
+  border-color: #f5f5f5;
+  background-color: white;
+  border-width: 1px;
+}
+p.sign-up-sub__info{
+  font-size: 13px;
+}
+
+input[type="checkbox"]{
+   transform: scale(1.2);
+   margin: 16px 5px
+}
+#user_first_category_id,#user_second_category_id,#user_third_category_id{
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin: 3px;
+}
+#user_birth_year,#user_birth_month,#user_birth_day{
+  height:52px;
+  width:138px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
